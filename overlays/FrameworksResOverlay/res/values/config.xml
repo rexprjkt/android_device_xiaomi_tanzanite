@@ -518,4 +518,7 @@
          manager will disable alpha trasformation in animations where notAdd commentMore actions
          strictly needed. -->
     <bool name="config_sf_limitedAlpha">true</bool>
+
+    <!-- True if the device supports Sustained Performance Mode -->
+    <bool name="config_sustainedPerformanceModeSupported">true</bool>
 </resources>
