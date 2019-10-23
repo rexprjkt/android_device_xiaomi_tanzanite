@@ -131,6 +131,7 @@ debug.stagefright.c2inputsurface=-1
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
 media.c2.dmabuf.padding=3072
+media.stagefright.thumbnail.prefer_hw_codecs=true
 persist.vendor.md_c2k_cap_dep_check=0
 ro.vendor.mtk.c2.vdec.fmt.support.level=1
 ro.vendor.mtk_sec_video_path_support=1
