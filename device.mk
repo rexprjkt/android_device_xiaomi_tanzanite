@@ -193,6 +193,9 @@ PRODUCT_PACKAGES += \
     libmtkperf_client \
     libpowerhalwrap_vendor
 
+PRODUCT_PACKAGES += \
+    DT2W-Service-MT6789
+
 # Power configurations
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
