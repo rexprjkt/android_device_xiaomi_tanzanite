@@ -35,8 +35,7 @@ TARGET_OTA_ASSERT_DEVICE := tanzanite
 TARGET_BOOTLOADER_BOARD_NAME := tanzanite
 TARGET_NO_BOOTLOADER := true
 
-# Plaform
-BOARD_VENDOR := xiaomi
+# Platform
 TARGET_BOARD_PLATFORM := mt6789
 
 # Boot image
