@@ -300,3 +300,6 @@ ro.vendor.wlan.standalone.log=y
 
 # Wi-Fi Display
 ro.vendor.mtk_wfd_support=1
+
+# Zygote
+zygote.critical_window.minute=10
