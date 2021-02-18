@@ -17,6 +17,11 @@ on init
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "performance"
 
+## Utilization Clamping
+    # Tuning
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 96
+    write /proc/sys/kernel/sched_util_clamp_min 128
+
 on property:sys.boot_completed=1
     # PowerHAL Hint Processing
     setprop vendor.powerhal.init 1
