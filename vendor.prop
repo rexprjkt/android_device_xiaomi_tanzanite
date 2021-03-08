@@ -93,6 +93,9 @@ ro.vendor.sensors.xiaomi.udfps=true
 # FM
 ro.vendor.fm.platform=mt6631_6635
 
+# FUSE
+persist.sys.fuse.passthrough.enable=true
+
 # Graphics
 debug.graphics.game_default_frame_rate.disabled=true
 graphics.gpu.profiler.support=true
