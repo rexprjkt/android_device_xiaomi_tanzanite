@@ -22,6 +22,8 @@ on init
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "performance"
 
+    write /dev/sys/fs/by-name/userdata/iostat_enable 0
+
     # Disable printk logging
     write /proc/sys/kernel/printk_devkmsg off
 
