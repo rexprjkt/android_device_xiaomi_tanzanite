@@ -6,6 +6,9 @@ ro.radio.device_type=1
 # Connsys
 persist.vendor.connsysfw.enable=true
 
+# Dexopt
+dalvik.vm.dex2oat64.enabled=true
+
 # WLAN
 wifi.interface=wlan0
 ro.mediatek.wlan.wsc=1
