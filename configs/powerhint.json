@@ -20,6 +20,15 @@
       ]
     },
     {
+      "Name": "RestrictedCpuset",
+      "Path": "/dev/cpuset/restricted/cpus",
+      "Values": [
+        "0-3",
+        "0-7"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "GpuPwrLevel",
       "Path": "/proc/gpufreqv2/fix_target_opp_index",
       "Values": [
@@ -490,6 +499,12 @@
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "5"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "RestrictedCpuset",
+      "Duration": 0,
+      "Value": "0-3"
     }
   ]
 }
