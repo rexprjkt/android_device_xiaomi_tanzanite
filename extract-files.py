@@ -32,8 +32,27 @@ lib_fixups: lib_fixups_user_type = {
     libs_proto_21_12: lib_fixup_remove_proto_version_suffix,
 }
 
+def fixup_ndk_platform(libname: str) -> tuple[str, str]:
+    """
+    Replace -ndk_platform with -ndk
+    """
+    return (libname, libname.replace("-ndk_platform.so", "-ndk.so"))
+
+patchelf_version = "0_17_2"
 
 blob_fixups: blob_fixups_user_type = {
+    "vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod": blob_fixup()
+    .patchelf_version(patchelf_version)
+    .replace_needed(
+        "android.hardware.security.keymint-V1-ndk_platform.so",
+        "android.hardware.security.keymint-V3-ndk.so",
+    )
+    .replace_needed(
+        *fixup_ndk_platform("android.hardware.security.secureclock-V1-ndk_platform.so")
+    )
+    .replace_needed(
+        *fixup_ndk_platform("android.hardware.security.sharedsecret-V1-ndk_platform.so")
+    ),
     "vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc": blob_fixup().regex_replace(
         "android.hardware.graphics.allocator@4.0-service-mediatek",
         "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
