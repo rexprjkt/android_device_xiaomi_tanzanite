@@ -101,7 +101,7 @@ ro.vendor.smvr.p2batch.vga=8
 ro.vendor.gps.chrdev=gps_drv_stp
 ro.vendor.mtk_agps_app=1
 ro.vendor.mtk_gps_support=1
-ro.vendor.mtk_log_hide_gps=0
+ro.vendor.mtk_log_hide_gps=1
 
 # Media
 debug.mediatek.appgamepq_compress=1
