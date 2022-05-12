@@ -114,6 +114,7 @@ ro.vendor.mtk_gps_support=1
 ro.vendor.mtk_log_hide_gps=1
 
 # HWUI
+debug.hwui.skia_atrace_enabled=false
 debug.renderengine.backend=skiaglthreaded
 
 # Media
