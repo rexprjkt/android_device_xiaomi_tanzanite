@@ -22,7 +22,7 @@ from extract_utils.main import (
 namespace_imports = [
     'device/xiaomi/tanzanite',
     "hardware/mediatek",
-    "hardware/mediatek/libmtkperf_client"
+    "hardware/mediatek/libmtkperf_client",
 ]
 
 
@@ -32,11 +32,13 @@ lib_fixups: lib_fixups_user_type = {
     libs_proto_21_12: lib_fixup_remove_proto_version_suffix,
 }
 
+
 def fixup_ndk_platform(libname: str) -> tuple[str, str]:
     """
     Replace -ndk_platform with -ndk
     """
     return (libname, libname.replace("-ndk_platform.so", "-ndk.so"))
+
 
 patchelf_version = "0_17_2"
 
@@ -58,6 +60,9 @@ blob_fixups: blob_fixups_user_type = {
         "android.hardware.graphics.allocator@4.0-service-mediatek",
         "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
     ),
+    "vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b": blob_fixup()
+    .patchelf_version(patchelf_version)
+    .replace_needed("libavservices_minijail_vendor.so", "libavservices_minijail.so"),
     "vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc": blob_fixup().regex_replace(
         "@1.2-mediatek", "@1.2-mediatek-64b"
     ),
