@@ -327,6 +327,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    ApertureOverlayTanzanite \
     FrameworksResOverlayTanzanite \
     SettingsResOverlayTanzanite \
     SystemUIOverlayTanzanite \
