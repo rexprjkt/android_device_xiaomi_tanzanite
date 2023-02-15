@@ -749,3 +749,7 @@ on property:sys.boot_completed=1 && property:ro.debuggable="1"
    mount debugfs debugfs /sys/kernel/debug
    chmod 0755 /sys/kernel/debug
 #O6 code for HQ-392650 by p-jiyongfei at 2024.7.15 end
+
+# Stop Serial Console
+on boot
+    stop console
