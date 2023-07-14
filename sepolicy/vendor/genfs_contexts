@@ -27,6 +27,9 @@ genfscon sysfs /devices/platform/soc/11b21000.i2c/i2c-5/5-0034/11b21000.i2c:mt63
 # Fingerprint
 genfscon sysfs /devices/virtual/touch/touch_dev/fod_press_status u:object_r:vendor_fingerprint_sysfs:s0
 
+# Graphics
+genfscon sysfs /devices/platform/soc/13000000.mali u:object_r:sysfs_gpu:s0
+
 # Trusted Execution Environment (TEE)
 genfscon proc /mitee_log 									 u:object_r:proc_mitee_log:s0
 
