@@ -286,6 +286,9 @@ PRODUCT_PACKAGES += \
     TetheringResOverlayTanzanite \
     WifiResOverlayTanzanite
 
+# Properties
+include $(LOCAL_PATH)/vendor_logtag.mk
+
 # Sku properties
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/sku/,$(TARGET_COPY_OUT_ODM)/etc)
