@@ -61,6 +61,14 @@ blob_fixups: blob_fixups_user_type = {
         "android.hardware.graphics.allocator@4.0-service-mediatek",
         "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
     ),
+    (
+        "vendor/lib/libwvhidl.so",
+        "vendor/lib/mediadrm/libwvdrmengine.so",
+        "vendor/lib64/libwvhidl.so",
+        "vendor/lib64/mediadrm/libwvdrmengine.so",
+    ): blob_fixup()
+    .patchelf_version(patchelf_version)
+    .replace_needed("libprotobuf-cpp-lite-3.9.1.so", "libprotobuf-cpp-full-3.9.1.so"),
     "vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b": blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libavservices_minijail_vendor.so", "libavservices_minijail.so")
