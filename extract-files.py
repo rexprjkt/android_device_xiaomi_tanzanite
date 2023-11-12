@@ -69,6 +69,14 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libprotobuf-cpp-lite-3.9.1.so", "libprotobuf-cpp-full-3.9.1.so"),
+    (
+        "vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so",
+        "vendor/lib64/mt6789/libaalservice.so",
+        "vendor/lib64/mt6789/libcam.utils.sensorprovider.so",
+        "vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so"
+    ): blob_fixup()
+    .patchelf_version(patchelf_version)
+    .add_needed("libshim_sensors.so"),
     "vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b": blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libavservices_minijail_vendor.so", "libavservices_minijail.so")
