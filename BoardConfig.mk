@@ -121,5 +121,9 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
+# Android Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS := --flags 3
+
 # Inherit the proprietary files
 include vendor/xiaomi/tanzanite/BoardConfigVendor.mk
