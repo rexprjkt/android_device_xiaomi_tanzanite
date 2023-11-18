@@ -108,6 +108,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.mediatek \
     android.hardware.health-service.mediatek-recovery
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.lineage
+
 # MediaCas
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service-lazy
@@ -205,7 +209,8 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/mediatek
+    hardware/mediatek \
+    hardware/xiaomi
 
 # Shipping API Level
 PRODUCT_SHIPPING_API_LEVEL := 31
