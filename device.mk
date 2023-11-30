@@ -266,6 +266,7 @@ PRODUCT_PACKAGES += \
     FrameworksResOverlayTanzanite \
     SettingsResOverlayTanzanite \
     SystemUIOverlayTanzanite \
+    TetheringResOverlayTanzanite \
     WifiResOverlayTanzanite
 
 # Soong namespaces
