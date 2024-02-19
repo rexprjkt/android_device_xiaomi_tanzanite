@@ -38,3 +38,6 @@ genfscon sysfs /devices/platform/soc/11e00000.i2c/i2c-0/0-0038/wakeup u:object_r
 genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-7/7-0065/power_supply/sc-cp-master/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-7/7-0065/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1f000000.mdp/wakeup u:object_r:sysfs_wakeup:s0
+
+# USB
+genfscon sysfs /devices/platform/rt-pd-manager/typec/port0                         u:object_r:sysfs_usb_nonplat:s0
