@@ -29,6 +29,7 @@ ro.vendor.mtk_audio_tuning_tool_ver=V1
 ro.vendor.mtk_hifiaudio_support=1
 
 # Bluetooth
+bluetooth.device.default_name=Redmi Note 14
 persist.bluetooth.a2dp_offload.cap=sbc-aac
 persist.bluetooth.a2dp_offload.disabled=true
 ro.bluetooth.a2dp_offload.supported=true
