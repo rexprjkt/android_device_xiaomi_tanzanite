@@ -9,10 +9,18 @@ genfscon sysfs /devices/platform/extcon_usb u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/hq_chg_manager/power_supply/battery u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/hq_chg_manager/power_supply/usb u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/hq_chg_manager/power_supply/charger/type u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/soc/soc:hq_chg_manager/power_supply/usb/real_type u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-7/7-0055/power_supply/bms u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-7/7-0055/verify_digest u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11f00000.i2c/i2c-7/7-0065/power_supply u:object_r:sysfs_power_supply:s0
-genfscon sysfs /devices/platform/soc/soc:xm_pd_adapter/Charging_Adapter/pd_adapter u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/pdo2 u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/adapter_id u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/adapter_svid u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/verify_process u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/usbpd_verifed u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/current_pr u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/current_state u:object_r:sysfs_power_supply:s0
+genfscon sysfs /devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/request_vdm_cmd u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11b21000.i2c/i2c-5/5-0034/11b21000.i2c:mt6375@34:chg/power_supply/ u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/soc/11b21000.i2c/i2c-5/5-0034/11b21000.i2c:mt6375@34:mtk_gauge/power_supply/ u:object_r:sysfs_power_supply:s0
 
