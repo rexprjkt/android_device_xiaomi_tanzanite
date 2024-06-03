@@ -119,6 +119,9 @@ debug.hwui.use_hint_manager=true
 debug.hwui.skia_atrace_enabled=false
 debug.renderengine.backend=skiaglthreaded
 
+# LMKD
+ro.lmk.kill_heaviest_task=true
+
 # Media
 debug.stagefright.c2inputsurface=-1
 debug.mediatek.appgamepq_compress=1
