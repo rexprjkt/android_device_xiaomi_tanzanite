@@ -113,6 +113,9 @@ ro.vendor.mtk_agps_app=1
 ro.vendor.mtk_gps_support=1
 ro.vendor.mtk_log_hide_gps=1
 
+# HWUI
+debug.renderengine.backend=skiaglthreaded
+
 # Media
 debug.stagefright.c2inputsurface=-1
 debug.mediatek.appgamepq_compress=1
