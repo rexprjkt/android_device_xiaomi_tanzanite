@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=$(BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE) \
+    FILESYSTEM_TYPE_system=$(TARGET_RO_FILE_SYSTEM_TYPE) \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -57,7 +57,16 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Compressed Virtual A/B
+ifneq ($(WITH_GMS),true)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+TARGET_RO_FILE_SYSTEM_TYPE := ext4
+else
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
+TARGET_RO_FILE_SYSTEM_TYPE := erofs
+PRODUCT_VIRTUAL_AB_COW_VERSION := 3
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
+endif
 
 # Boot control (A/B Updates)
 PRODUCT_PACKAGES += \
