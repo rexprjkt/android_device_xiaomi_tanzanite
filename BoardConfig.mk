@@ -172,9 +172,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
-# VNDK
-BOARD_VNDK_VERSION := current
-
 # SEPolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
