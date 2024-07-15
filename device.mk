@@ -65,6 +65,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.default_recovery
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
+
 $(call soong_config_set,android_hardware_audio,run_64bit,true)
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
