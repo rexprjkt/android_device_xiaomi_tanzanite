@@ -155,6 +155,8 @@ blob_fixups: blob_fixups_user_type = {
     .add_needed('libaudioclient_shim.so'),
     'system_ext/lib64/libsource.so': blob_fixup()
     .add_needed('libui_shim.so'),
+    'vendor/lib64/libdlbdsservice.so': blob_fixup()
+    .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so")
 }  # fmt: skip
 
 module = ExtractUtilsModule(
