@@ -1,6 +1,9 @@
 # Batterysecret
 persist.vendor.accelerate.charge u:object_r:vendor_batterysecret_prop:s0
 
+# Camera
+persist.vendor.camera. u:object_r:vendor_camera_persist_prop:s0
+
 # RIL
 ro.vendor.oem.sno                        u:object_r:vendor_mtk_radio_prop:s0
 ro.vendor.oem.psno                       u:object_r:vendor_mtk_radio_prop:s0
