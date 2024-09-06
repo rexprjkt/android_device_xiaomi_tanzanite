@@ -129,6 +129,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/mtk_agpsd': blob_fixup()
     .replace_needed('libcrypto.so', 'libcrypto-v32.so')
     .add_needed('libssl-v32.so'),
+    'vendor/lib64/mt6789/libmnl.so': blob_fixup()
+    .add_needed('libcutils.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
