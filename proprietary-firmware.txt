@@ -1,0 +1,12 @@
+# Firmware from OS2.0.1.0.VOGMIXM
+dpm.img;AB
+gz.img;AB
+lk.img;AB
+mcupm.img;AB
+md1img.img;AB
+pi_img.img;AB
+preloader_tanzanite.bin:preloader_raw.img;AB|ad68beab35a8320bb56040410b3639d38f3d2eb5
+scp.img;AB
+spmfw.img;AB
+sspm.img;AB
+tee.img;AB
