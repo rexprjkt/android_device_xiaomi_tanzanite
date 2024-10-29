@@ -48,7 +48,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 
 # Init scripts
 PRODUCT_PACKAGES += \
-    init.recovery.usb.rc
+    init.recovery.usb.rc \
+    fstab.mt6789 \
+    fstab.mt6789.vendor_ramdisk
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
