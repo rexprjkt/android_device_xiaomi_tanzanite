@@ -162,6 +162,9 @@ BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 3
 # Vendor security patch level
 VENDOR_SECURITY_PATCH := 2025-03-01
 
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
+
 # VNDK
 BOARD_VNDK_VERSION := current
 
