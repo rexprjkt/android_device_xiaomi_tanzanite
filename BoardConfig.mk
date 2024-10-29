@@ -28,5 +28,18 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
+# OTA Updates
+TARGET_OTA_ASSERT_DEVICE := tanzanite
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := tanzanite
+TARGET_NO_BOOTLOADER := true
+
+# Plaform
+BOARD_VENDOR := xiaomi
+BOARD_HAS_MTK_HARDWARE := true
+TARGET_BOARD_PLATFORM := mt6789
+
+
 # Inherit the proprietary files
 include vendor/xiaomi/tanzanite/BoardConfigVendor.mk
