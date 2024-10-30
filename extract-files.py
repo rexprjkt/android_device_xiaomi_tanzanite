@@ -41,12 +41,13 @@ def fixup_ndk_platform(libname: str) -> tuple[str, str]:
 patchelf_version = "0_17_2"
 
 blob_fixups: blob_fixups_user_type = {
-    "vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod": blob_fixup()
+    "vendor/bin/hw/android.hardware.security.keymint@1.0-service.mitee": blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed(
         "android.hardware.security.keymint-V1-ndk_platform.so",
         "android.hardware.security.keymint-V3-ndk.so",
     )
+    .add_needed("android.hardware.security.rkp-V3-ndk.so")
     .replace_needed(
         *fixup_ndk_platform("android.hardware.security.secureclock-V1-ndk_platform.so")
     )
