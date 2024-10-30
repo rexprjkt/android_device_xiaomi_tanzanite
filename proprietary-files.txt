@@ -400,6 +400,14 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 
+# SoundTrigger
+vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6789.so
+vendor/lib64/libvow_ap_test_aa.so
+vendor/lib64/libvow_ap_test_dd.so
+vendor/lib64/libvow_ap_test_ha.so
+vendor/lib64/libvow_ap_test_hh.so
+vendor/lib64/libvow_ap_test_nn.so
+
 # TEE
 vendor/bin/miteelog
 vendor/bin/tee-supplicant
