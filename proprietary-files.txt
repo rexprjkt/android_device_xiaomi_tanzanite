@@ -1384,6 +1384,33 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
 
+# Neural Networks
+vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk
+vendor/etc/armnn_app.config
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
+vendor/etc/nnapi_powerhal.json
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
+vendor/lib64/libarmnn.so
+vendor/lib64/libarmnn_ndk.mtk.vndk.so
+vendor/lib64/libasn1c_core.so
+vendor/lib64/libasn1c_mapi.so
+vendor/lib64/libasn1c_mdmi.so
+vendor/lib64/libcmdl.so
+vendor/lib64/libcmdl_ndk.mtk.vndk.so
+vendor/lib64/libneuron_graph_delegate.mtk.so
+vendor/lib64/libneuron_platform.so
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib64/libnpagent.so
+vendor/lib64/libnpagent_server.so
+vendor/lib64/libtflite_mtk.so
+vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so;DISABLE_CHECKELF
+vendor/lib64/mt6789/libneuron_adapter_mgvi.so
+vendor/lib64/mt6789/libneuron_runtime.5.so
+vendor/lib64/mt6789/libnir_neon_driver.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
+
 # NVRAM
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
