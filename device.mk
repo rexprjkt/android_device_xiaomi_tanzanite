@@ -84,6 +84,12 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.3-service \
+    android.software.vulkan.deqp.level-2021-03-01.prebuilt.xml \
+    android.software.opengles.deqp.level-2021-03-01.prebuilt.xml
+
 # Permissions (features)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
