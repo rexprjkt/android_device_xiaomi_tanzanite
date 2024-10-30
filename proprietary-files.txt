@@ -166,6 +166,19 @@ vendor/etc/audio_param/VoWVoiceCommand_ParamUnitDesc.xml
 vendor/etc/sixth_param.txt
 vendor/etc/sixth_param_voip.txt
 
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
+vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
+vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
+vendor/lib64/libbluetooth_audio_session_mediatek.so
+vendor/lib64/libbluetooth_mtk.so
+vendor/lib64/libbluetooth_mtk_pure.so
+vendor/lib64/libbt-vendor.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
+
 # Display configs
 vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/cust_color_dsi_o7_38_0c_0a_dsc_vdo.xml
