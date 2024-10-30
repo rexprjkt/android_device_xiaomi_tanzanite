@@ -100,6 +100,26 @@
         <fqname>@1.0::IComposerExt/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.mediatek.hardware.mmagent</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IMMAgent</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.1::IMMAgent/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.mms</name>
+        <transport>hwbinder</transport>
+        <version>1.6</version>
+        <interface>
+            <name>IMms</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.6::IMms/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.mediatek.hardware.netdagent</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
