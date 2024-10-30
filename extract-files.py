@@ -4,9 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-from extract_utils.fixups_blob import (
-    blob_fixups_user_type,
-)
+from extract_utils.fixups_blob import blob_fixups_user_type, blob_fixup
 from extract_utils.fixups_lib import (
     lib_fixup_remove_arch_suffix,
     lib_fixup_remove_proto_version_suffix,
@@ -34,6 +32,10 @@ lib_fixups: lib_fixups_user_type = {
 
 
 blob_fixups: blob_fixups_user_type = {
+    "vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc": blob_fixup().regex_replace(
+        "android.hardware.graphics.allocator@4.0-service-mediatek",
+        "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
+    ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
@@ -45,6 +47,6 @@ module = ExtractUtilsModule(
     check_elf=True,
 )
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     utils = ExtractUtils.device(module)
     utils.run()
