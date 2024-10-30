@@ -1,4 +1,17 @@
-# MTK connectivity .rc configure
+service wmt_loader /vendor/bin/wmt_loader
+    class early_hal
+    user system
+    group system
+    oneshot
 
-import /vendor/etc/init/hw/init_connectivity.rc
-import /vendor/etc/init/hw/init.connectivity.common.rc
+service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/ -o 1
+    class early_hal
+    user system
+    group system
+
+on post-fs-data
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    chown bluetooth bluetooth /dev/ttyGS2
+    chmod 0660 /dev/ttyGS2
