@@ -90,6 +90,22 @@ PRODUCT_PACKAGES += \
     android.software.vulkan.deqp.level-2021-03-01.prebuilt.xml \
     android.software.opengles.deqp.level-2021-03-01.prebuilt.xml
 
+# MediaCas
+PRODUCT_PACKAGES += \
+    android.hardware.cas@1.2-service-lazy
+
+# Media (C2)
+PRODUCT_PACKAGES += \
+    libcodec2_hidl_plugin:64 \
+    libcodec2_soft_common.vendor:64 \
+    libeffects:64 \
+    libeffectsconfig.vendor:64
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc) \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
+
 # Permissions (features)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \

@@ -36,6 +36,9 @@ blob_fixups: blob_fixups_user_type = {
         "android.hardware.graphics.allocator@4.0-service-mediatek",
         "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
     ),
+    "vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc": blob_fixup().regex_replace(
+        "@1.2-mediatek", "@1.2-mediatek-64b"
+    ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
