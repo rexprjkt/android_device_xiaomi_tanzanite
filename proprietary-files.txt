@@ -259,6 +259,12 @@ vendor/lib64/mt6789/libaiselector.so
 vendor/lib64/mt6789/libdpframework.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 
+# Keymint
+vendor/bin/hw/android.hardware.security.keymint@1.0-service.mitee
+vendor/etc/init/android.hardware.security.keymint-service.mitee.rc
+vendor/etc/permissions/android.hardware.hardware_keystore.xml:vendor/etc/permissions/android.hardware.hardware_keystore.mitee.xml
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
+
 # Media (Common)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b;DISABLE_CHECKELF
 vendor/bin/mt6789/v3avpud.mt6789:vendor/bin/v3avpud
