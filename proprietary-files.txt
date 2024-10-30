@@ -185,6 +185,15 @@ vendor/etc/cust_color_dsi_o7_38_0c_0a_dsc_vdo.xml
 vendor/etc/dsi_o7_38_0c_0a_dsc_vdo_mi.xml
 vendor/etc/screen_light.xml
 
+# DRM (Digital Rights Management)
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libwvhidl.so
+vendor/lib64/libwvkeybox.so
+vendor/lib64/mediadrm/libwvdrmengine.so
+
 # Firmware
 vendor/firmware/aw87xxx_acf.bin
 vendor/firmware/BT_FW.cfg
