@@ -1142,7 +1142,6 @@ service mi_thermald /system/vendor/bin/mi_thermald
     class main
     user root
     group system
-    seclabel u:r:mi_thermald:s0
 
 #O6 code for HQ-391283 by p-wangkang20 at 2024.6.25 start
 service initprop_bin /system/vendor/bin/initprop_bin
