@@ -14,6 +14,10 @@ from extract_utils.fixups_lib import (
     libs_proto_3_9_1,
     libs_proto_21_12,
 )
+from extract_utils.fixups_lib import (
+    lib_fixups,
+    lib_fixups_user_type,
+)
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
@@ -42,6 +46,15 @@ def fixup_ndk_platform(libname: str) -> tuple[str, str]:
 
 
 patchelf_version = "0_17_2"
+
+def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
+    return f'{lib}_{partition}' if partition == 'vendor' else None
+
+
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+    ('vendor.mediatek.hardware.videotelephony@1.0',): lib_fixup_vendor_suffix,
+}
 
 blob_fixups: blob_fixups_user_type = {
     "vendor/bin/hw/android.hardware.security.keymint@1.0-service.mitee": blob_fixup()
