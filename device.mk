@@ -79,7 +79,8 @@ PRODUCT_PACKAGES += \
     audio.usb.default:64
 
 PRODUCT_PACKAGES += \
-    XiaomiDolby
+    XiaomiDolby \
+    DSPVolumeSynchronizer
 
 # Audio Configuration
 PRODUCT_COPY_FILES += \
