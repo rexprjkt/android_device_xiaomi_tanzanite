@@ -544,7 +544,6 @@ on post-fs-data
     # O7 code for HQ-387309 by lichuchu at 20240709 end
 
 on boot
-    write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
