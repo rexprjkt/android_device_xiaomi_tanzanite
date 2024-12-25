@@ -9,3 +9,10 @@
 
 # Thermal
 /(vendor|system/vendor)/bin/mi_thermald                                                                u:object_r:mi_thermald_exec:s0
+
+# Trusted Execution Environment (TEE)
+/(vendor|system/vendor)/bin/tee-supplicant                                                             u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/miteelog                                                                   u:object_r:tee_exec:s0
+/dev/tee0                                                                                              u:object_r:mitee_client_device:s0
+/dev/teepriv0                                                                                          u:object_r:mitee_client_device:s0
+/data/vendor/mitee(/.*)?                                                                               u:object_r:mitee_data_file:s0
