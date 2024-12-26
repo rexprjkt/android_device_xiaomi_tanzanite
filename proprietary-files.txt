@@ -1194,6 +1194,9 @@ vendor/etc/camera/xml/tanzanite/sceneDetection_tanzanite_wide_ii.xml
 vendor/etc/camera/xml/tanzanite/sceneDetection_tanzanite_wide_iii.xml
 vendor/etc/camera/xml/xiaomiSceneDetection.xml
 
+# ConsumerIR
+vendor/lib64/hw/consumerir.common.so:vendor/lib64/hw/consumerir.mt6789.so;FIX_SONAME
+
 # Display configs
 vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/cust_color_dsi_o7_38_0c_0a_dsc_vdo.xml
