@@ -1250,6 +1250,44 @@ vendor/firmware/WMT_SOC.cfg
 vendor/lib64/hw/gatekeeper.mitee.so
 vendor/lib64/hw/libSoftGatekeeper.so
 
+# GNSS
+vendor/bin/hw/android.hardware.gnss-service.mediatek
+vendor/bin/mnld
+vendor/bin/mtk_agpsd
+vendor/etc/init/android.hardware.gnss-service.mediatek.rc
+vendor/etc/init/mtk_agpsd_p.rc
+vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mtk.xml
+vendor/etc/vintf/manifest/gnss@2.1-service.xml
+vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
+vendor/lib64/hw/gps.default.so
+vendor/lib64/mt6789/libmnl.so
+vendor/lib64/mt6789/libDR.so
+vendor/lib64/librpc.so
+vendor/lib64/libviagpsrpc.so
+
+# GNSS (Configs)
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CBN.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CMCC.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CT.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CU.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Movistar_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
+vendor/etc/gnss/agps_profiles_conf2.xml
+vendor/etc/MNL_Config.xml
+vendor/etc/slp_conf
+
 # Graphics
 vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc

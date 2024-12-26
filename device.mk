@@ -242,6 +242,10 @@ PRODUCT_PACKAGES += \
     fstab.mt6789.vendor_ramdisk \
     ueventd.mt6789.rc
 
+# GNSS
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
