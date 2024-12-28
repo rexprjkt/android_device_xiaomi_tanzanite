@@ -107,6 +107,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# IMS
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-framework \
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common \
+    mediatek-ims-extension-plugin
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
@@ -267,6 +282,7 @@ PRODUCT_PACKAGES += \
     FrameworksResOverlayTanzanite \
     SettingsResOverlayTanzanite \
     SystemUIOverlayTanzanite \
+    TelephonyOverlayTanzanite \
     TetheringResOverlayTanzanite \
     WifiResOverlayTanzanite
 
