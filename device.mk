@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
-    android.hardware.memtrack-service.mediatek-mali \
+    android.hardware.memtrack-service.mediatek \
     android.software.vulkan.deqp.level-2021-03-01.prebuilt.xml \
     android.software.opengles.deqp.level-2021-03-01.prebuilt.xml
 
