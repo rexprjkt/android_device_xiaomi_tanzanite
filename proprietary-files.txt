@@ -1366,14 +1366,12 @@ vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
-vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libh264dec_customize.so
 vendor/lib/libh264dec_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libh264dec_sd.ca7.so;DISABLE_CHECKELF
 vendor/lib/libh264dec_se.ca7.so;DISABLE_CHECKELF
 vendor/lib/libh264enc_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libhevce_sb.ca7.android.so;DISABLE_CHECKELF
-vendor/lib/libmp3dec_mtk.so
 vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libmp4enc_xa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libvcodec_oal.so;DISABLE_CHECKELF
@@ -1396,9 +1394,7 @@ vendor/lib64/AVCSecureVdecCA.so
 vendor/lib64/HEVCSecureVdecCA.so
 vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/libAVCSecureVencCA.so
-vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libbwc.so
-vendor/lib64/libmp3dec_mtk.so
 vendor/lib64/libvcodec_oal.so;DISABLE_CHECKELF
 vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/mt6789/libmtk_drvb.so
@@ -1407,11 +1403,6 @@ vendor/lib64/libvpu5.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
-vendor/lib64/libcodec2_soft_mtk_alacdec.so
-vendor/lib64/libcodec2_soft_mtk_apedec.so
-vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
-vendor/lib64/libcodec2_soft_mtk_mp3dec.so
-vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
