@@ -448,6 +448,18 @@
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "1003000000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "500000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "725000"
     }
   ]
 }
