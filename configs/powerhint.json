@@ -468,6 +468,18 @@
       "Value": "725000"
     },
     {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "390000000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "390000000"
+    },
+    {
       "PowerHint": "GAME",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
