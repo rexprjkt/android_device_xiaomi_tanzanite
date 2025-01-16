@@ -1,0 +1,1 @@
+allow hal_drm_widevine mitee_client_device:chr_file ioctl;

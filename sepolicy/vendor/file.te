@@ -1,3 +1,4 @@
 # Trusted Execution Environment (TEE)
 type mitee_client_device, dev_type, mlstrustedobject;
 type mitee_data_file, data_file_type, file_type;
+type proc_mitee_log, fs_type, proc_type;
