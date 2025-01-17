@@ -1671,9 +1671,16 @@ vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libksensor.so
 
 # Sensors (CIT)
+vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
+vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
+vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
+vendor/lib64/libssccalapi@2.0.so
 vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
+vendor/etc/sensors/lightSensorCali.json
+vendor/etc/sensors/lightSensorConfigSecSensor.json
 
 # SoundTrigger
 vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6789.so;FIX_SONAME
