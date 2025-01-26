@@ -446,9 +446,6 @@ on post-fs-data
     chown system camera /dev/vpu
     chown system camera /dev/apusys
     chown system camera /dev/mtk_ccd
-    chown system camera /sys/kernel/debug/mtk_cam_dbg/0/ctrl
-    chown system camera /sys/kernel/debug/mtk_cam_dbg/1/ctrl
-    chown system camera /sys/kernel/debug/mtk_cam_dbg/2/ctrl
 
     #CCU
     chmod 0660 /dev/ccu
