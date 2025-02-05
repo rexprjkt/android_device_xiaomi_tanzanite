@@ -1,6 +1,12 @@
 # Batterysecret
 persist.vendor.accelerate.charge u:object_r:vendor_batterysecret_prop:s0
 
+# RIL
+ro.vendor.oem.sno                        u:object_r:vendor_mtk_radio_prop:s0
+ro.vendor.oem.psno                       u:object_r:vendor_mtk_radio_prop:s0
+ro.vendor.oem.imei                       u:object_r:vendor_mtk_radio_prop:s0
+ro.vendor.oem.meid                       u:object_r:vendor_mtk_radio_prop:s0
+
 # Sensors
 ro.vendor.sensors.xiaomi.		 u:object_r:vendor_sensors_prop:s0
 
