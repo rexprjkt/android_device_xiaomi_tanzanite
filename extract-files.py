@@ -156,7 +156,15 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libsource.so': blob_fixup()
     .add_needed('libui_shim.so'),
     'vendor/lib64/libdlbdsservice.so': blob_fixup()
-    .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so")
+    .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
+    'vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so': blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_createFromHandle')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_getNativeHandle')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
