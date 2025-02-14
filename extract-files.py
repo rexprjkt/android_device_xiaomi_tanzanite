@@ -135,8 +135,10 @@ blob_fixups: blob_fixups_user_type = {
     .add_needed('libcutils.so'),
     'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
     .apktool_patch('blob-patches/ImsService.patch', '-r'),
-    'system_ext/lib64/libsource.so': blob_fixup()
-        .add_needed('libui_shim.so'),
+    'system_ext/lib64/libimsma.so': blob_fixup()
+    .replace_needed('libsink.so', 'libsink-mtk.so'),
+    'system_ext/lib64/libsink-mtk.so': blob_fixup()
+    .add_needed('libaudioclient_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
