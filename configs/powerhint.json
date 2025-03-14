@@ -268,6 +268,33 @@
       "DefaultIndex": 0,
       "ResetOnInit": true
     },
+        {
+      "Name": "TopAppCpuset",
+      "Path": "/dev/cpuset/top-app/cpus",
+      "Values": [
+        "0-3",
+        "0-7"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "ForegroundCpuset",
+      "Path": "/dev/cpuset/foreground/cpus",
+      "Values": [
+        "0-2",
+        "0-6"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "ForegroundWindowCpuset",
+      "Path": "/dev/cpuset/foreground_window/cpus",
+      "Values": [
+        "0-2",
+        "0-6"
+      ],
+      "ResetOnInit": true
+    },
     {
       "Name": "PowerHALRenderingState",
       "Path": "vendor.powerhal.rendering",
@@ -414,6 +441,42 @@
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "51"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "ForegroundCpuset",
+      "Duration": 0,
+      "Value": "0-2"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "ForegroundWindowCpuset",
+      "Duration": 0,
+      "Value": "0-2"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "TopAppCpuset",
+      "Duration": 0,
+      "Value": "0-3"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "ForegroundWindowCpuset",
+      "Duration": 0,
+      "Value": "0-2"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "RestrictedCpuset",
+      "Duration": 0,
+      "Value": "0-3"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "TopAppCpuset",
+      "Duration": 0,
+      "Value": "0-3"
     }
   ]
 }
