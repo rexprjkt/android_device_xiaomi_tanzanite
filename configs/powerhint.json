@@ -405,7 +405,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "745000000"
+      "Value": "1003000000"
     },
     {
       "PowerHint": "ML_ACC",
