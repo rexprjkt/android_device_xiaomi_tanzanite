@@ -264,6 +264,9 @@ vendor.debug.sf.cpupolicy.xgf_min=25
 vendor.debug.sf.cpupolicy=0
 vendor.debug.sf.latch_unsignaled=1
 
+# Stop gralloc logspam
+log.tag.gralloc4=S
+
 # Storage
 external_storage.casefold.enabled=1
 external_storage.projid.enabled=1
