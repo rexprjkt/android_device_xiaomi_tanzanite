@@ -101,9 +101,22 @@ PRODUCT_COPY_FILES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
+    init.insmod.sh \
+    init.insmod.mtk.cfg \
+    init.cgroup.rc \
+    init_connectivity.rc \
+    init.connectivity.common.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6789.rc \
+    init.mt6789.usb.rc \
+    init.mtkgki.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
     init.recovery.usb.rc \
     fstab.mt6789 \
-    fstab.mt6789.vendor_ramdisk
+    fstab.mt6789.vendor_ramdisk \
+    ueventd.mt6789.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

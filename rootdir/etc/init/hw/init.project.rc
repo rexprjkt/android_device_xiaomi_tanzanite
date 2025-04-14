@@ -1,0 +1,226 @@
+import /vendor/etc/init/hw/init.mtkgki.rc
+
+# NFC init start
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.nfc_snxxx@1.2-service.rc
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.secure_element_snxxx@1.2-service.rc
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.wired_se@1.0-service-tms.rc
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.secure_element@1.2-service-tms.rc
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.nfc@1.2-service-tms.rc
+import /vendor/odm/etc/init/${ro.boot.product.hardware.sku}/android.hardware.secure_element@1.2-service-mediatek.rc
+
+# MTK project .rc configure
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+
+on post-fs-data
+
+#O7 code for HQ-387272 by p-chenyushuai at 2024/07/11 start
+#touch
+    chown system system /sys/class/touch/touch_dev/palm_sensor
+#O7 code for HQ-387272 by p-chenyushuai at 2024/07/11 end
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+
+#O7 code for HQ-396614 by huabinchen1 at 2024/07/09 start
+#dual calib
+    mkdir /data/vendor/camera/ 0777 system camera
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wt.bin
+    chmod 0777 /data/vendor/camera/rear_dc_cal_wd.bin
+    chmod 0777 /data/vendor/camera/rear_dc_cal_wu.bin
+    restorecon /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    restorecon /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
+    mkdir /mnt/vendor/persist 0777 system camera
+    mkdir /mnt/vendor/persist/camera 0777 system camera
+    chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wd.golden
+    chmod 0777 /vendor/etc/camera/dualcam_cali_golden_1_1
+    chmod 0777 /vendor/etc/camera/dualcam_cali_golden_1_2
+    chmod 0777 /vendor/etc/camera/dualcam_cali_golden_2_1
+    chmod 0777 /vendor/etc/camera/dualcam_cali_golden_2_2
+    chmod 0777 /vendor/etc/camera/dualcam_cali_golden_3_1
+    chmod 0777 /vendor/etc/camera/dualcam_cali_golden_3_2
+    chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wu.golden
+    chmod 0777 /data/vendor/camera/golden_rear_dc_cal_wt.bin
+#O7 code for HQ-396614 by huabinchen1 at 2024/07/09 end
+
+# O7 code for HQ-396612 by huabinchen at 2024/07/11 start
+#intsense bokeh use
+    mkdir /data/vendor/camera/model 0777 system camera
+    mkdir /data/vendor/camera/model/dof_model 0777 system camera
+    mkdir /data/vendor/camera/model/rt_model 0777 system camera
+    mkdir /data/vendor/camera/dof_mecp 0777 system camera
+    chown system system /data/vendor/camera/com.xiaomi.dcal.wd.data
+    chown system system /data/vendor/camera/com.xiaomi.dcal.wu.data
+    chmod 0777 /data/vendor/camera/com.xiaomi.dcal.wd.data
+    chmod 0777 /data/vendor/camera/com.xiaomi.dcal.wu.data
+    copy /vendor/etc/camera/model/dof_model/capture_model /data/vendor/camera/model/dof_model/capture_model
+    copy /vendor/etc/camera/model/dof_model/capture_cache /data/vendor/camera/model/dof_model/capture_cache
+    copy /vendor/etc/camera/model/dof_model/capture_policy /data/vendor/camera/model/dof_model/capture_policy
+    copy /vendor/etc/camera/model/rt_model/preview_cache /data/vendor/camera/model/rt_model/preview_cache
+    copy /vendor/etc/camera/model/rt_model/preview_model /data/vendor/camera/model/rt_model/preview_model
+    copy /vendor/etc/camera/model/rt_model/preview_policy /data/vendor/camera/model/rt_model/preview_policy
+    copy /vendor/etc/camera/dof_mecp/dof_mecp.bin /data/vendor/camera/dof_mecp/dof_mecp.bin
+    chmod 0666 /data/vendor/camera/model/dof_model/capture_model
+    chmod 0666 /data/vendor/camera/model/dof_model/capture_cache
+    chmod 0666 /data/vendor/camera/model/dof_model/capture_policy
+    chmod 0666 /data/vendor/camera/model/rt_model/preview_cache
+    chmod 0666 /data/vendor/camera/model/rt_model/preview_model
+    chmod 0666 /data/vendor/camera/model/rt_model/preview_policy
+    chmod 0666 /data/vendor/camera/dof_mecp/dof_mecp.bin
+# O7 code for HQ-396612 by huabinchen at 2024/07/11 end
+
+#O7 code for HQ-387747 by zhangkaiqiang at 2024/08/06 start
+# Touch
+on property:sys.tp.grip_enable=0
+    write /sys/devices/virtual/touch/touch_dev/touch_edge 0
+on property:sys.tp.grip_enable=90
+    write /sys/devices/virtual/touch/touch_dev/touch_edge 1
+on property:sys.tp.grip_enable=270
+    write /sys/devices/virtual/touch/touch_dev/touch_edge 2
+#O7 code for HQ-387747 by zhangkaiqiang at 2024/08/06 end
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+#O7 code for HQ-392964 by p-wangkang20 at 2024.7.16 start
+on property:vendor.sysctl.tx=0
+    exec /vendor/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 2"
+on property:vendor.sysctl.tx=1
+    exec /vendor/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 1"
+
+service sarcalibration /vendor/bin/sns_sensors_test_and_cal -c 72,3,50000000,0
+    class main
+    user root
+    disabled
+    oneshot
+    group root system
+    seclabel u:r:sardiag:s0
+#O7 code for HQ-392964 by p-wangkang20 at 2024.7.16 end
+
+# displayfeature
+on boot
+    chown system system /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness
+    chmod 0777 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness
+    chmod 0777 /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chown system system /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chmod 0777 /dev/mi_display/disp_feature
+    chown system system /dev/mi_display/disp_feature
+    chmod 0777 /sys/class/mi_display/disp-DSI-0/disp_param
+    chown system system /sys/class/mi_display/disp-DSI-0/disp_param
+
+#O7 code for BUGO7UPV-977 by p-chenxiaoyong1 at 2025/03/03 start
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAIN3AF
+    chown system camera /dev/MAIN3AF
+
+    chmod 0660 /dev/camera-dip
+    chown system camera /dev/camera-dip
+
+    chmod 0660 /dev/camera-fdvt
+    chown system camera /dev/camera-fdvt
+
+    chmod 0660 /dev/camera-isp
+    chown system camera /dev/camera-isp
+
+    chmod 0660 /dev/camera-mem
+    chown system camera /dev/camera-mem
+
+    chmod 0660 /dev/camera-rsc
+    chown system camera /dev/camera-rsc
+
+    chmod 0660 /dev/camera_eeprom0
+    chown system camera /dev/camera_eeprom0
+
+    chmod 0660 /dev/camera_eeprom1
+    chown system camera /dev/camera_eeprom1
+
+    chmod 0660 /dev/camera_eeprom2
+    chown system camera /dev/camera_eeprom2
+
+    chmod 0660 /dev/camera_eeprom3
+    chown system camera /dev/camera_eeprom3
+
+    chmod 0660 /dev/flashlight
+    chown system camera /dev/flashlight
+
+    chmod 0660 /dev/kd_camera_hw
+    chown system camera /dev/kd_camera_hw
+
+    chmod 0660 /dev/media0
+    chown camera system /dev/media0
+
+    chmod 0660 /dev/seninf
+    chown system camera /dev/seninf
+
+    chmod 0660 /dev/seninf_n3d
+    chown system camera /dev/seninf_n3d
+
+    chmod 0660 /dev/video2
+    chown camera system /dev/video2
+#O7 code for BUGO7UPV-977 by p-chenxiaoyong1 at 2025/03/03 end
+
+# Millet Aurogon
+on init
+    insmod /vendor/lib/modules/millet_core.ko
+    insmod /vendor/lib/modules/binder_gki.ko
+    insmod /vendor/lib/modules/millet_binder.ko
+    insmod /vendor/lib/modules/millet_hs.ko
+    insmod /vendor/lib/modules/millet_pkg.ko
+    insmod /vendor/lib/modules/millet_sig.ko
+    insmod /vendor/lib/modules/millet_oem_cgroup.ko
+
+# start mmstat
+on property:sys.boot_completed=1
+    mkdir /sys/kernel/tracing/instances/mmstat 711
+    write /sys/kernel/tracing/instances/mmstat/tracing_on 0
+    write /sys/kernel/tracing/instances/mmstat/buffer_size_kb 16
+    write /sys/kernel/tracing/instances/mmstat/events/mmstat/enable 1
+    write /sys/kernel/tracing/instances/mmstat/tracing_on 1
+
+# charge
+on property:ro.product.vendor.name=*
+    write sys/class/power_supply/battery/product_name ${ro.product.vendor.name}
