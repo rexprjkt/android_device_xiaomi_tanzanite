@@ -1,0 +1,56 @@
+# RIL
+vendor.rild.libpath=mtk-ril.so
+vendor.rild.libargs=-d /dev/ttyC0
+ro.radio.device_type=1
+
+# Connsys
+persist.vendor.connsysfw.enable=true
+
+# WLAN
+wifi.interface=wlan0
+ro.mediatek.wlan.wsc=1
+ro.mediatek.wlan.p2p=1
+mediatek.wlan.ctia=0
+wifi.tethering.interface=ap0
+wifi.direct.interface=p2p0
+
+# Graphics
+ro.opengles.version=196610
+
+# USB
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp
+ro.sys.usb.bicr=no
+ro.sys.usb.charging.only=yes
+
+# IPO
+sys.ipo.pwrdncap=2
+sys.ipo.disable=1
+
+# Audio
+ro.audio.flinger_standbytime_ms=1000
+ro.audio.ihaladaptervendorextension_enabled=true
+ro.audio.silent=0
+ro.audio.usb.period_us=16000
+ro.camera.sound.forced=0
+ro.vendor.audio.notification.single=true
+
+# Zygote
+ro.zygote.preload.enable=0
+
+# Kernel
+ro.kernel.zio=38,108,105,16
+
+# MTKPerf
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+
+# Identity
+Build.BRAND=MTK
+
+# Disable iorapd
+ro.iorapd.enable=false
+
+# async property set
+ro.property_service.async_persist_writes=true
