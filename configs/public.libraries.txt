@@ -1,0 +1,24 @@
+libOpenCL.so
+libmpbase.so 64
+libanc_dc_base.so 64
+libanc_night.so 64
+libmialgoengine.so 64
+libmialgoengine2.so 64
+libcom.xiaomi.pluginutils.so
+com.xiaomi.plugin.superlowlight.so 64
+com.xiaomi.plugin.ancrawhdr.so 64
+com.xiaomi.plugin.ancrawmfnr.so 64
+com.xiaomi.plugin.photosolid.so 64
+libmorpho_Ldc.so 64
+com.xiaomi.plugin.ldc.so 64
+com.xiaomi.plugin.morphohdr.so 64
+com.xiaomi.plugin.morphohdsr.so 64
+libmorpho_HDSR.so 64
+com.xiaomi.plugin.skinbeautifier.so 64
+libTrueSight.so 64
+libc++_shared.so 64
+vendor.mediatek.hardware.camera.isphal@1.0.so 64
+vendor.mediatek.hardware.camera.atms@1.0.so 64
+libanc_single_bokeh.so 64
+libwa_dof.so 64
+libwa_cap_refocus.so 64
