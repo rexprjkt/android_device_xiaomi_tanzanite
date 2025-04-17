@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2024 The LineageOS Project
+
+    SPDX-License-Identifier: Apache-2.0
+-->
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds.  Do not translate.
+     NOTE: The naming convention is "config_camelCaseValue". Some legacy
+     entries do not follow the convention, but all new entries should. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. The display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>3.86</item>
+        <item>4.51</item>
+        <item>5.35</item>
+        <item>18.2</item>
+        <item>24.68</item>
+        <item>31.9</item>
+        <item>35.12</item>
+        <item>45.35</item>
+        <item>58.47</item>
+        <item>76.36</item>
+        <item>83.03</item>
+        <item>84.26</item>
+        <item>84.26</item>
+        <item>84.26</item>
+        <item>85.48</item>
+        <item>85.48</item>
+        <item>85.48</item>
+        <item>87.04</item>
+        <item>87.04</item>
+        <item>88.48</item>
+        <item>88.48</item>
+        <item>88.48</item>
+        <item>88.48</item>
+        <item>89.93</item>
+        <item>89.93</item>
+        <item>91.15</item>
+        <item>93.71</item>
+        <item>94.93</item>
+        <item>96.26</item>
+        <item>98.71</item>
+        <item>99.82</item>
+        <item>102.15</item>
+        <item>103.26</item>
+        <item>105.71</item>
+        <item>106.82</item>
+        <item>107.93</item>
+        <item>111.27</item>
+        <item>112.38</item>
+        <item>113.49</item>
+        <item>115.83</item>
+        <item>116.83</item>
+        <item>118.94</item>
+        <item>119.94</item>
+        <item>122.05</item>
+        <item>124.16</item>
+        <item>143.06</item>
+        <item>159.4</item>
+        <item>177.07</item>
+        <item>204.97</item>
+        <item>229.54</item>
+        <item>261.0</item>
+        <item>285.23</item>
+        <item>301.01</item>
+        <item>371.6</item>
+        <item>399.95</item>
+        <item>414.4</item>
+        <item>427.29</item>
+        <item>441.3</item>
+        <item>474.53</item>
+        <item>509.66</item>
+        <item>520.37</item>
+        <item>547.1</item>
+        <item>549.77</item>
+        <item>552.88</item>
+        <item>555.1</item>
+        <item>567.64</item>
+        <item>580.17</item>
+        <item>592.44</item>
+        <item>604.79</item>
+        <item>613.86</item>
+        <item>622.93</item>
+        <item>631.99</item>
+        <item>641.06</item>
+        <item>650.39</item>
+        <item>659.73</item>
+        <item>669.06</item>
+        <item>678.48</item>
+        <item>687.82</item>
+        <item>697.15</item>
+        <item>726.66</item>
+        <item>731.11</item>
+        <item>735.55</item>
+        <item>740.0</item>
+        <item>744.44</item>
+        <item>748.89</item>
+        <item>753.33</item>
+        <item>757.77</item>
+        <item>762.22</item>
+        <item>766.66</item>
+        <item>771.11</item>
+        <item>775.55</item>
+        <item>780.0</item>
+        <item>784.44</item>
+        <item>788.89</item>
+        <item>811.11</item>
+        <item>825.95</item>
+        <item>840.71</item>
+        <item>855.55</item>
+        <item>870.4</item>
+        <item>885.16</item>
+        <item>900.0</item>
+        <item>912.71</item>
+        <item>925.42</item>
+        <item>938.13</item>
+        <item>950.76</item>
+        <item>963.47</item>
+        <item>976.18</item>
+        <item>988.89</item>
+    </array>
+
+    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
+         The N entries of this array define N + 1 control points as follows:
+         (1-based arrays)
+
+         Point 1:            (0, value[1]):             lux <= 0
+         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
+         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
+         ...
+         Point N+1: (level[N], value[N+1]):  level[N] < lux
+
+         The control points must be strictly increasing.  Each control point
+         corresponds to an entry in the brightness backlight values arrays.
+         For example, if lux == level[1] (first element of the levels array)
+         then the brightness will be determined by value[2] (second element
+         of the brightness values array).
+
+         Spline interpolation is used to determine the auto-brightness
+         backlight values for lux levels between these control points.
+
+         Must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>120</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>220</item>
+        <item>240</item>
+        <item>260</item>
+        <item>280</item>
+        <item>300</item>
+        <item>320</item>
+        <item>340</item>
+        <item>360</item>
+        <item>380</item>
+        <item>400</item>
+        <item>420</item>
+        <item>440</item>
+        <item>460</item>
+        <item>480</item>
+        <item>500</item>
+        <item>700</item>
+        <item>900</item>
+        <item>1100</item>
+        <item>1300</item>
+        <item>1500</item>
+        <item>1700</item>
+        <item>1900</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+        <item>5500</item>
+        <item>6000</item>
+        <item>6500</item>
+        <item>7000</item>
+        <item>7500</item>
+        <item>8000</item>
+        <item>8500</item>
+        <item>9000</item>
+        <item>9500</item>
+        <item>10000</item>
+        <item>10500</item>
+        <item>11000</item>
+        <item>11500</item>
+        <item>12000</item>
+        <item>12500</item>
+        <item>13000</item>
+        <item>13500</item>
+        <item>14000</item>
+        <item>14500</item>
+        <item>15000</item>
+        <item>16000</item>
+        <item>17000</item>
+        <item>18000</item>
+        <item>19000</item>
+        <item>20000</item>
+        <item>21000</item>
+        <item>22000</item>
+        <item>23000</item>
+        <item>24000</item>
+        <item>25000</item>
+        <item>26000</item>
+        <item>27000</item>
+        <item>28000</item>
+        <item>29000</item>
+        <item>30000</item>
+        <item>35000</item>
+        <item>40000</item>
+        <item>45000</item>
+        <item>50000</item>
+        <item>55000</item>
+        <item>60000</item>
+        <item>65000</item>
+        <item>70000</item>
+        <item>75000</item>
+        <item>80000</item>
+        <item>85000</item>
+        <item>90000</item>
+        <item>95000</item>
+        <item>100000</item>
+    </integer-array>
+
+    <!-- Flag indicating whether we should enable the automatic brightness.
+         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Indicate whether to allow the device to suspend when the screen is off
+         due to the proximity sensor.  This resource should only be set to true
+         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+         Otherwise, the device may fail to wake out of suspend reliably.
+         The default is false. -->
+    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
+    <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
+         device from the display on/off state.
+
+         When false, autosuspend_disable() will be called before the display is turned on
+         and autosuspend_enable() will be called after the display is turned off.
+         This mode provides best compatibility for devices using legacy power management
+         features such as early suspend / late resume.
+
+         When true, autosuspend_display() and autosuspend_enable() will be called
+         independently of whether the display is being turned on or off.  This mode
+         enables the power manager to suspend the application processor while the
+         display is on.
+
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+
+         Refer to autosuspend.h for details.
+    -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
+    <!-- Power Management: Specifies whether to decouple the interactive state of the
+         device from the display on/off state.
+
+         When false, setInteractive(..., true) will be called before the display is turned on
+         and setInteractive(..., false) will be called after the display is turned off.
+         This mode provides best compatibility for devices that expect the interactive
+         state to be tied to the display state.
+
+         When true, setInteractive(...) will be called independently of whether the display
+         is being turned on or off.  This mode enables the power manager to reduce
+         clocks and disable the touch controller while the display is on.
+
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+
+         Refer to power.h for details.
+    -->
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Whether this device is supporting the camera toggle -->
+    <bool name="config_supportsCamToggle">true</bool>
+
+    <!-- Whether this device is supporting the software microphone toggle -->
+    <bool name="config_supportsMicToggle">true</bool>
+
+    <!-- The maximum range of gamma adjustment possible using the screen
+         auto-brightness adjustment setting. -->
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">150%</fraction>
+
+    <!-- Minimum screen brightness setting allowed by power manager.
+         -2 is invalid so setting will resort to int value specified above.
+         Set this to 0.0 to allow screen to go to minimal brightness.
+         The user is forbidden from setting the brightness below this level. -->
+    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.001709819</item>
+
+    <!-- Maximum screen brightness allowed by the power manager.
+         -2 is invalid so setting will resort to int value specified above.
+         Set this to 1.0 for maximum brightness range.
+         The user is forbidden from setting the brightness above this level. -->
+    <item name="config_screenBrightnessSettingMaximumFloat" format="float" type="dimen">1.0</item>
+
+    <!-- Default screen brightness setting set.
+         -2 is invalid so setting will resort to int value specified above.
+         Must be in the range specified by minimum and maximum. -->
+    <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.074743524</item>
+
+    <!-- Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <item name="config_screenBrightnessDimFloat" format="float" type="dimen">0.001709819</item>
+
+    <!-- Screen brightness used to dim the screen while dozing in a very low power state.
+         May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <integer name="config_screenBrightnessDoze">5</integer>
+
+     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
+
+    <!-- The default refresh rate for a given device. Change this value to set a higher default
+         refresh rate. If the hardware composer on the device supports display modes with a higher
+         refresh rate than the default value specified here, the framework may use those higher
+         refresh rate modes if an app chooses one by setting preferredDisplayModeId or calling
+         setFrameRate().
+         If a non-zero value is set for config_defaultPeakRefreshRate, then
+         config_defaultRefreshRate may be set to 0, in which case the value set for
+         config_defaultPeakRefreshRate will act as the default frame rate. -->
+    <integer name="config_defaultRefreshRate">0</integer>
+
+     <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
+         the framework from using higher refresh rates, even if display modes with higher refresh
+         rates are available from hardware composer. Only has an effect if the value is
+         non-zero. -->
+    <integer name="config_defaultPeakRefreshRate">120</integer>
+
+    <!-- Enable doze alwaysOn Display -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+         during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
+
+    <!-- The bounding path of the cutout region of the main built-in display.
+         Must either be empty if there is no cutout region, or a string that is parsable by
+         {@link android.util.PathParser}.
+
+         The path is assumed to be specified in display coordinates with pixel units and in
+         the display's native orientation, with the origin of the coordinate system at the
+         center top of the display. Optionally, you can append either `@left` or `@right` to the
+         end of the path string, in order to change the path origin to either the top left,
+         or top right of the display.
+
+         To facilitate writing device-independent emulation overlays, the marker `@dp` can be
+         appended after the path string to interpret coordinates in dp instead of px units.
+         Note that a physical cutout should be configured in pixels for the best results.
+
+         If the display supports multiple resolutions, please define the path config based on the
+         highest resolution so that it can be scaled correctly in each resolution.
+
+         Example for a 10px x 10px square top-center cutout:
+                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z</string>
+         Example for a 10dp x 10dp square top-center cutout:
+                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
+
+         @see https://www.w3.org/TR/SVG/paths.html#PathData
+         -->
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">M 0,0 H -33 V 88 H 33 V 0 H 0 Z</string>
+
+     <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
+         is not necessarily the same as the number of phones/logical modems supported by the device.
+         For example, a multi-sim device can have 2 phones/logical modems, but 3 physical slots,
+         or a single SIM device can have 1 phones/logical modems, but 2 physical slots (one eSIM
+         and one pSIM) -->
+    <integer name="config_num_physical_slots">2</integer>
+
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- ComponentName of a dream to show whenever the system would otherwise have gone to sleep. -->
+    <string translatable="false" name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+
+    <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
+    <bool name="config_dozePulsePickup">true</bool>
+
+    <!-- True if the display hardware only has brightness buckets rather than a full range of
+          backlight values -->
+    <bool name="config_displayBrightnessBucketsInDoze">true</bool>
+
+    <!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
+</resources>
