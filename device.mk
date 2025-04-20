@@ -240,6 +240,7 @@ PRODUCT_PACKAGES += \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6789.rc \
+    init.mt6789.power.rc \
     init.mt6789.usb.rc \
     init.mtkgki.rc \
     init.project.rc \
