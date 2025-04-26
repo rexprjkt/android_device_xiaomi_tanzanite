@@ -37,7 +37,6 @@ TARGET_NO_BOOTLOADER := true
 
 # Plaform
 BOARD_VENDOR := xiaomi
-BOARD_HAS_MTK_HARDWARE := true
 TARGET_BOARD_PLATFORM := mt6789
 
 # Boot image
