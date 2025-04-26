@@ -73,10 +73,11 @@ blob_fixups: blob_fixups_user_type = {
         "vendor/bin/mnld",
         "vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so",
         "vendor/lib64/mt6789/libaalservice.so",
-        "vendor/lib64/mt6789/libcam.utils.sensorprovider.so",
     ): blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libsensorndkbridge.so", "android.hardware.sensors@1.0-convert-shared.so"),
+    "vendor/lib64/mt6789/libcam.utils.sensorprovider.so": blob_fixup()
+    .add_needed("android.hardware.sensors@1.0-convert-shared.so"),
     "vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b": blob_fixup()
     .patchelf_version(patchelf_version)
     .replace_needed("libavservices_minijail_vendor.so", "libavservices_minijail.so")
