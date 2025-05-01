@@ -48,3 +48,6 @@
 /dev/teepriv0                                                                                          u:object_r:mitee_client_device:s0
 /dev/ufs-bsg0                                                                                          u:object_r:mitee_client_device:s0
 /data/vendor/mitee(/.*)?                                                                               u:object_r:mitee_data_file:s0
+
+# Process and system statistics files
+/proc/stat                                                                                                                                                u:object_r:proc_stat:s0
