@@ -185,6 +185,43 @@ vendor/etc/cust_color_dsi_o7_38_0c_0a_dsc_vdo.xml
 vendor/etc/dsi_o7_38_0c_0a_dsc_vdo_mi.xml
 vendor/etc/screen_light.xml
 
+# Firmware
+vendor/firmware/aw87xxx_acf.bin
+vendor/firmware/BT_FW.cfg
+vendor/firmware/fm_cust.cfg
+vendor/firmware/focaltech_ts_fw_samsung_ft3519t.bin
+vendor/firmware/focaltech_ts_mp.ini
+vendor/firmware/lib3a.ccu
+vendor/firmware/mt6627_fm_v1_coeff.bin
+vendor/firmware/mt6627_fm_v1_patch.bin
+vendor/firmware/mt6630_fm_v1_coeff.bin
+vendor/firmware/mt6630_fm_v1_patch.bin
+vendor/firmware/mt6630_fm_v2_coeff.bin
+vendor/firmware/mt6630_fm_v2_coeff_tx.bin
+vendor/firmware/mt6630_fm_v2_patch.bin
+vendor/firmware/mt6630_fm_v2_patch_tx.bin
+vendor/firmware/mt6631_fm_v1_coeff.bin
+vendor/firmware/mt6631_fm_v1_patch.bin
+vendor/firmware/mt6632_fm_v1_coeff.bin
+vendor/firmware/mt6632_fm_v1_patch.bin
+vendor/firmware/mt6635_fm_v1_coeff.bin
+vendor/firmware/mt6635_fm_v1_patch.bin
+vendor/firmware/remoteproc_scp
+vendor/firmware/sipa.bin
+vendor/firmware/soc2_2_ram_bt_1d_1_hdr.bin
+vendor/firmware/soc2_2_ram_bt_1e_1_hdr.bin
+vendor/firmware/soc2_2_ram_mcu_1d_1_hdr.bin
+vendor/firmware/soc2_2_ram_mcu_1e_1_hdr.bin
+vendor/firmware/soc2_2_ram_wifi_1d_1_hdr.bin
+vendor/firmware/soc2_2_ram_wifi_1e_1_hdr.bin
+vendor/firmware/soc_fm_v1_coeff.bin
+vendor/firmware/soc_fm_v1_patch.bin
+vendor/firmware/txpowerctrl.cfg
+vendor/firmware/wifi.cfg
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1d_1.bin
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1e_1.bin
+vendor/firmware/WMT_SOC.cfg
+
 # Graphics
 vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
