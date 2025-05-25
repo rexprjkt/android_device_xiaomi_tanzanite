@@ -268,4 +268,9 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IVideoTelephony/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.sensor.citsensorservice</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::ICitSensorService/default</fqname>
+    </hal>
 </manifest>
