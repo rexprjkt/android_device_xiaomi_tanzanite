@@ -1,4 +1,5 @@
 import /vendor/etc/init/hw/init.connectivity.rc
+import /vendor/etc/init/hw/init.fingerprint.rc
 import /vendor/etc/init/hw/init.mt6789.power.rc
 import /vendor/etc/init/hw/init.mt6789.usb.rc
 import /vendor/etc/init/hw/init.project.rc

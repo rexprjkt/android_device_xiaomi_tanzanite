@@ -1216,6 +1216,12 @@ vendor/lib64/libwvhidl.so
 vendor/lib64/libwvkeybox.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
+# Fingerprint
+vendor/lib64/anc.hal.so
+vendor/lib64/hw/fingerprint.jiiov.so:vendor/lib64/hw/fingerprint.jiiov.default.so;FIX_SONAME
+vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so;FIX_SONAME
+vendor/lib64/hw/libgf_hal.so
+
 # Firmware
 vendor/firmware/aw87xxx_acf.bin
 vendor/firmware/BT_FW.cfg

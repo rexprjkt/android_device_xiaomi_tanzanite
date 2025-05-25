@@ -6,7 +6,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      <!-- The radius of the enrollment progress bar, in dp -->
-     <integer name="config_udfpsEnrollProgressBar" translatable="false">119</integer>
+     <integer name="config_udfpsEnrollProgressBar" translatable="false">90</integer>
 
      <!-- Whether to show Smooth Display feature in Settings Options -->
      <bool name="config_show_smooth_display">true</bool>

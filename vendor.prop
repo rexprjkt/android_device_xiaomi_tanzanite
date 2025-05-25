@@ -82,6 +82,11 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 drm.service.enabled=true
 ro.vendor.mtk_widevine_drm_l3_support=1
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps
+persist.vendor.fingerprint.sensor_location=540|2110|105
+ro.vendor.sensors.xiaomi.udfps=true
+
 # FM
 ro.vendor.fm.platform=mt6631_6635
 

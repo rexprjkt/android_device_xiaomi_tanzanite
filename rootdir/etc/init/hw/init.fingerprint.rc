@@ -1,0 +1,10 @@
+on post-fs-data
+   mkdir /data/vendor/fpdump
+   chown system system /data/vendor/fpdump
+   chmod 0700 /data/vendor/fpdump
+   mkdir /mnt/vendor/persist/fingerprint 0777 system system
+   mkdir /mnt/vendor/persist/fingerprint/jiiov 0777 system system
+   chown system system /dev/xiaomi-fp
+   chmod 0644 /dev/xiaomi-fp
+   chown system system /sys/class/mi_display/disp-DSI-0/disp_param
+   chmod 0777 /sys/class/mi_display/disp-DSI-0/disp_param

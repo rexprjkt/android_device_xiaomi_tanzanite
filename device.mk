@@ -107,6 +107,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.xiaomi
+
+PRODUCT_PACKAGES += \
+    libudfpshandler \
+    sensors.xiaomi.v2
+
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.fx.tunnel@1.0.vendor
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+
 # IMS
 PRODUCT_BOOT_JARS += \
     mediatek-common \
@@ -273,6 +287,7 @@ PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mtk.cfg \
     init.connectivity.rc \
+    init.fingerprint.rc \
     init.modem.rc \
     init.mt6789.rc \
     init.mt6789.power.rc \
