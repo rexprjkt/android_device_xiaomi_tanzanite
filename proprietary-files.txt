@@ -1459,6 +1459,14 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
+# NFC
+vendor/etc/init/init.tanzanite.nfc.rc
+vendor/etc/libnfc-nxp.conf
+vendor/etc/libnfc-nxp-pnscr.conf
+vendor/etc/sn100u_nfcon.pnscr
+vendor/libnfc-nxp_RF.conf
+vendor/lib64/libpn560_fw.so
+
 # NVRAM
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
