@@ -153,7 +153,7 @@ blob_fixups: blob_fixups_user_type = {
     .replace_needed('libsink.so', 'libsink-mtk.so'),
     'system_ext/lib64/libsink-mtk.so': blob_fixup()
     .add_needed('libaudioclient_shim.so'),
-    'system_ext/lib64/libsource.so': blob_fixup()
+    ('system_ext/lib64/libsource.so', 'vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so'): blob_fixup()
     .add_needed('libui_shim.so'),
 }  # fmt: skip
 

@@ -1227,6 +1227,8 @@ vendor/lib64/libwvkeybox.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
 # Fingerprint
+vendor/app/JVFactoryTest_O7/JVFactoryTest_O7.apk
+vendor/app/goodix_sz_miui/goodix_sz_miui.apk
 vendor/lib64/anc.hal.so
 vendor/lib64/hw/fingerprint.jiiov.so:vendor/lib64/hw/fingerprint.jiiov.default.so;FIX_SONAME
 vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so;FIX_SONAME
@@ -1666,9 +1668,18 @@ vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libksensor.so
 
 # Sensors (CIT)
+vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
+vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
 vendor/lib64/libclient2slpi.notifier.so
+vendor/lib64/libssccalapi@2.0.so
+vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
+
+# Sensors configs
+vendor/etc/sensors/lightSensorConfigSecSensor.json
+vendor/etc/sensors/lightSensorCali.json
 
 # SoundTrigger
 vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6789.so;FIX_SONAME
