@@ -195,3 +195,11 @@
 /dev/elliptic0            0644   system     system
 /dev/elliptic1            0644   system     system
 #BSP.AUDIO - 2024.06.17 - modify for bring up UltraSound Sensor end
+
+# xiaomi display feature
+subsystem mi_display
+    devname uevent_devpath
+    dirname /dev/mi_display
+
+# xiaomi display feature
+/dev/mi_display/*         0666   root       graphics
