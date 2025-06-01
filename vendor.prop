@@ -65,6 +65,7 @@ vendor.mtk.camera.app.fd.video=1
 
 # Charger
 ro.vendor.mtk_fast_charging_support=1
+persist.vendor.accelerate.charge=true
 
 # Connsys
 persist.vendor.connsys.chipid=-1
