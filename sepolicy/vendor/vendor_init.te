@@ -3,3 +3,5 @@ rw_dir_file(vendor_init, proc)
 
 set_prop(vendor_init, vendor_batterysecret_prop)
 set_prop(vendor_init, vendor_sensors_prop)
+
+set_prop(vendor_init, vendor_fingerprint_prop)

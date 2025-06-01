@@ -1,0 +1,15 @@
+add_service(hal_fingerprint_default, vendor_hal_fingerprint_service_xiaomi)
+
+rw_dir_file(hal_fingerprint_default, sysfs_therm)
+rw_dir_file(hal_fingerprint_default, vendor_displayfeature_sysfs)
+rw_dir_file(hal_fingerprint_default, vendor_fingerprint_sysfs)
+
+allow hal_fingerprint_default input_device:dir r_dir_perms;
+allow hal_fingerprint_default input_device:chr_file rw_file_perms;
+allow hal_fingerprint_default mnt_vendor_file:dir r_dir_perms;
+allow hal_fingerprint_default persist_data_file:dir create_dir_perms;
+allow hal_fingerprint_default persist_data_file:file rw_file_perms;
+allow hal_fingerprint_default vendor_displayfeature_device:chr_file rw_file_perms;
+allow hal_fingerprint_default mitee_client_device:chr_file { ioctl read write open };
+
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
