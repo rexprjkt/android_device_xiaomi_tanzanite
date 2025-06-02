@@ -169,7 +169,6 @@ vendor/etc/sixth_param_voip.txt
 
 # Batterysecret
 vendor/bin/batterysecret
-vendor/etc/init/init.batterysecret.rc
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
