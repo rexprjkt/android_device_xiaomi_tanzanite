@@ -261,5 +261,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.HWUI=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.FrameTracker=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.C2MtkBufferManager=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.libsensor-client2css=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.libsensor-client2css=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.libperfmgr=$(VENDOR_LOG_LEVEL)
 
