@@ -681,10 +681,6 @@ on property:sys.boot_completed=1
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
 
-# MTK fast charging support
-on property:persist.vendor.mediatek.fast_charging.support=*
-    write /sys/devices/platform/charger/fast_chg_indicator ${persist.vendor.mediatek.fast_charging.support}
-
 # O6 code for HQ-392308 by p-liwenke at 2024/07/15 start
 on property:ro.boot.crash_reason=*
   setprop vendor.minidump.crash_reason ${ro.boot.crash_reason}
