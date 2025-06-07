@@ -27,7 +27,7 @@ namespace_imports = [
     'device/xiaomi/tanzanite',
     "hardware/mediatek",
     "hardware/mediatek/libmtkperf_client",
-    "hardware/lineage/compat",
+    "hardware/halcyon/compat",
     "hardware/xiaomi"
 ]
 
