@@ -1,7 +1,7 @@
 on init
     # Setup final cpuset
-    write /dev/cpuset/foreground/cpus 0-5,7
-    write /dev/cpuset/foreground_window/cpus 0-5,7
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/foreground_window/cpus 0-6
     write /dev/cpuset/background/cpus 1-3
     write /dev/cpuset/system-background/cpus 1-5
     write /dev/cpuset/top-app/cpus 0-7
