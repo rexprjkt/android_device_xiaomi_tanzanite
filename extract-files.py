@@ -72,6 +72,8 @@ blob_fixups: blob_fixups_user_type = {
     .replace_needed(
         *fixup_ndk_platform("android.hardware.security.sharedsecret-V1-ndk_platform.so")
     ),
+    'vendor/bin/hw/mtkfusionrild': blob_fixup()
+        .add_needed('libutils-v32.so'),
     "vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc": blob_fixup().regex_replace(
         "android.hardware.graphics.allocator@4.0-service-mediatek",
         "mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789",
