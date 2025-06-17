@@ -20,4 +20,5 @@ on post-fs-data
     mkdir /data/vendor/goodix 0770 system system
     mkdir /data/vendor/fingerprint 0770 system system
     mkdir /mnt/vendor/persist/goodix 0770 system system
+    mkdir /mnt/vendor/persist/fingerprint/jiiov 0777 system system
     chown system system /data/vendor
