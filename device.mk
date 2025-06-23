@@ -90,6 +90,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1-mtk-service \
     android.hardware.bluetooth.audio-impl:64
 
 # Boot control (A/B Updates)
