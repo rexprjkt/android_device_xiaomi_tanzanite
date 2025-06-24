@@ -1,4 +1,4 @@
-# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.1.0.VOGMIXM release-keys
+# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.4.0.VOGMIXM release-keys
 
 # AAL
 vendor/lib64/libaal_cust.so
@@ -267,6 +267,7 @@ vendor/lib64/libCamera_ov20b40sunnyfrontmipiraw_Video_720P.so
 vendor/lib64/libCamera_ov20b40sunnyfrontmipiraw_XTS_Capture.so
 vendor/lib64/libCamera_ov20b40sunnyfrontmipiraw_XTS_Preview.so
 vendor/lib64/libCamera_s5khm6aacmainmipiraw_3rd_Party_camera_Capture.so
+vendor/lib64/libCamera_s5khm6aacmainmipiraw_3rd_Party_camera_Capture1.so
 vendor/lib64/libCamera_s5khm6aacmainmipiraw_3rd_Party_camera_Preview.so
 vendor/lib64/libCamera_s5khm6aacmainmipiraw_3rd_Party_MFNR_Capture.so
 vendor/lib64/libCamera_s5khm6aacmainmipiraw_Capture_200M_Remosaic.so
@@ -343,6 +344,7 @@ vendor/lib64/libCamera_s5khm6aacmainmipiraw_Video_720_30_Zoom1.so
 vendor/lib64/libCamera_s5khm6aacmainmipiraw_Video_720_30_Zoom2.so
 vendor/lib64/libCamera_s5khm6aacmainmipiraw_Video_Dual.so
 vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_3rd_Party_camera_Capture.so
+vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_3rd_Party_camera_Capture1.so
 vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_3rd_Party_camera_Preview.so
 vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_3rd_Party_MFNR_Capture.so
 vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_Capture_200M_Remosaic.so
@@ -419,6 +421,7 @@ vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_Video_720_30_Zoom1.so
 vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_Video_720_30_Zoom2.so
 vendor/lib64/libCamera_s5khm6ofilmmainmipiraw_Video_Dual.so
 vendor/lib64/libCamera_s5khm6sunnymainmipiraw_3rd_Party_camera_Capture.so
+vendor/lib64/libCamera_s5khm6sunnymainmipiraw_3rd_Party_camera_Capture1.so
 vendor/lib64/libCamera_s5khm6sunnymainmipiraw_3rd_Party_camera_Preview.so
 vendor/lib64/libCamera_s5khm6sunnymainmipiraw_3rd_Party_MFNR_Capture.so
 vendor/lib64/libCamera_s5khm6sunnymainmipiraw_Capture_200M_Remosaic.so
