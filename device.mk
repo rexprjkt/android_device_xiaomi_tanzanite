@@ -87,8 +87,7 @@ PRODUCT_PACKAGES += \
     libdynproc
 
 PRODUCT_PACKAGES += \
-    XiaomiDolby \
-    DSPVolumeSynchronizer
+    XiaomiDolby
 
 # Audio Configuration
 PRODUCT_COPY_FILES += \
