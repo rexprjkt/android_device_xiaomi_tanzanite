@@ -144,6 +144,11 @@ ro.vendor.mediatek.version.branch=alps-mp-s0.mp1.tc8sp2-cs1
 ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc8sp2-cs1-xm.V1.122.g100.s0mp1.k6789v1.64_P26
 ro.vendor.mgvi_name=mihal
 
+# Power
+vendor.powerhal.interaction.offset=0
+vendor.powerhal.interaction.min=50
+vendor.powerhal.interaction.max=150
+
 # PQ
 ro.vendor.pq.mtk_aal_support=1
 ro.vendor.pq.mtk_ai_scence_pq_support=0
