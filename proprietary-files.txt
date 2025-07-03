@@ -60,6 +60,8 @@ vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 
+# Audio (misound)
+vendor/lib64/libmisoundcrossfade.so;FIX_SONAME
 
 # Audio Configurations
 vendor/etc/AudioLog_dynamic.xml
