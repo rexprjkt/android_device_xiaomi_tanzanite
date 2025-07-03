@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libudfpshandler \
-    sensors.xiaomi.v2
+    sensors.xiaomi.v2:64
 
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.fx.tunnel@1.0.vendor
