@@ -1,25 +1,6 @@
 {
   "Nodes": [
     {
-      "Name": "MemFreq",
-      "Path": "/sys/devices/platform/soc/10012000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq",
-      "Values": [
-        "9999999999",
-        "4266000000",
-        "3200000000",
-        "2400000000",
-        "1866000000",
-        "1600000000",
-        "1200000000",
-        "800000000",
-        "0"
-      ],
-      "ResetOnInit": true,
-      "Comments": [
-        "It is userspace gov, powerhal will have exclusive and direct control of the freq"
-      ]
-    },
-    {
       "Name": "CPULittleClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
@@ -358,51 +339,9 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "MemFreq",
-      "Duration": 4000,
-      "Value": "9999999999"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "UclampTAMin",
       "Duration": 4000,
       "Value": "100"
-    },  
-    {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "CPUBigClusterMaxFreq",
-      "Duration": 0,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "CPULittleClusterMaxFreq",
-      "Duration": 0,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "CPULittleClusterMinFreq",
-      "Duration": 0,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "UclampTAMin",
-      "Duration": 0,
-      "Value": "100"
-    },
-    {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "MemFreq",
-      "Duration": 0,
-      "Value": "9999999999"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -461,7 +400,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "2200000"
+      "Value": "2000000"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
