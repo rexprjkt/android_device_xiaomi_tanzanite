@@ -1240,6 +1240,7 @@ vendor/lib64/anc.hal.so
 vendor/lib64/hw/fingerprint.jiiov.so:vendor/lib64/hw/fingerprint.jiiov.default.so;FIX_SONAME
 vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so;FIX_SONAME
 vendor/lib64/hw/libgf_hal.so
+vendor/lib64/libmifpext.so
 
 # Firmware
 vendor/firmware/aw87xxx_acf.bin
@@ -1569,6 +1570,9 @@ vendor/lib/libverno.so
 vendor/lib64/libcares_naptr.so
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
+vendor/lib64/libgwsd-ril.so
+vendor/lib64/libgwsdv2-ril.so
+vendor/lib64/libgwsdv3-ril.so
 vendor/lib64/libmipc.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmtk-fusion-ril-prop-vsim.so
