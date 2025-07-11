@@ -466,7 +466,7 @@
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "GpuPwrLevel",
       "Duration": 0,
-      "Value": "44"
+      "Value": "15"
     },
     {
       "PowerHint": "GAME",
