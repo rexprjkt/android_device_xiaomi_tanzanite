@@ -1616,6 +1616,22 @@ vendor/etc/virtual-spn-conf-by-efgid1.xml
 vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
+vendor/etc/rsc/default/ro.prop
+vendor/etc/rsc/default/rw.prop
+vendor/etc/rsc/obsidian_eea/ro.prop
+vendor/etc/rsc/obsidian_eea/rw.prop
+vendor/etc/rsc/obsidian_gl/ro.prop
+vendor/etc/rsc/obsidian_gl/rw.prop
+vendor/etc/rsc/obsidian_p_gl/ro.prop
+vendor/etc/rsc/obsidian_p_gl/rw.prop
+vendor/etc/rsc/tanzanite_e_eea/ro.prop
+vendor/etc/rsc/tanzanite_e_eea/rw.prop
+vendor/etc/rsc/tanzanite_gl/ro.prop
+vendor/etc/rsc/tanzanite_gl/rw.prop
+vendor/etc/rsc/tanzanite_l_la/ro.prop
+vendor/etc/rsc/tanzanite_l_la/rw.prop
+vendor/etc/rsc/tanzanite_n_gl/ro.prop
+vendor/etc/rsc/tanzanite_n_gl/rw.prop
 
 
 # Radio (IMS)
