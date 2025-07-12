@@ -1,2 +1,5 @@
 # Dolby
 vendor.dolby.hardware.dms::IDms                          u:object_r:hal_dms_hwservice:s0
+
+# FX Tunnel (Fingerprint)
+vendor.xiaomi.hardware.fx.tunnel::IMiFxTunnel    u:object_r:hal_xiaomi_fingerprint_hwservice:s0

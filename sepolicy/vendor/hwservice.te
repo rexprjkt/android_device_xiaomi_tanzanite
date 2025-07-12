@@ -1,2 +1,5 @@
 # Dolby
 type hal_dms_hwservice, hwservice_manager_type;
+
+# FX Tunnel (Fingerprint)
+type hal_xiaomi_fingerprint_hwservice, hwservice_manager_type;
