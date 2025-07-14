@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
 
 # DRM (Clearkey)
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey
+    com.android.hardware.drm.clearkey
 
 # FastbootD
 PRODUCT_PACKAGES += \
