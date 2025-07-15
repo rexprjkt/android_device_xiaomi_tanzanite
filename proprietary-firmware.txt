@@ -1,4 +1,4 @@
-# Firmware from OS2.0.1.0.VOGMIXM
+# Firmware from OS2.0.202.0.VOGEUXM
 dpm.img;AB
 gz.img;AB
 lk.img;AB
