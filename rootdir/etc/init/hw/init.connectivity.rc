@@ -44,6 +44,11 @@ service wmt_loader /vendor/bin/wmt_loader
     group system
     oneshot
 
+service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/ -o 1
+    class early_hal
+    user system
+    group system
+
 on property:vendor.connsys.driver.ready=yes && property:persist.vendor.connsys.coredump.mode=*
     write /proc/driver/wmt_user_proc "0x1 ${persist.vendor.connsys.coredump.mode}"
 
