@@ -61,7 +61,12 @@ vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 
 # Audio (misound)
+vendor/etc/misound_res.bin
+vendor/etc/misound_res_headphone.bin
+vendor/etc/misound_res_spk.bin
 vendor/lib64/libmisoundcrossfade.so;FIX_SONAME
+vendor/lib64/libmisound.so
+vendor/lib64/soundfx/libmisoundfx.so
 
 # Audio Configurations
 vendor/etc/AudioLog_dynamic.xml
