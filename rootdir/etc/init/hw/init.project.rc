@@ -190,17 +190,6 @@ on property:sys.boot_completed=1
 on property:ro.product.name=*
     write /sys/class/power_supply/battery/product_name ${ro.product.name}
 
-# DT2W
-on boot
-    chmod 0666 /system/bin/sendevent
-    chmod 0666 /dev/input/event2
-
-on property:persist.sys.MT6789.dt2w=0
-    exec - root -- /system/bin/sendevent /dev/input/event2 0 1 4
-
-on property:persist.sys.MT6789.dt2w=1
-    exec - root -- /system/bin/sendevent /dev/input/event2 0 1 5
-
 # NFC
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
     override
