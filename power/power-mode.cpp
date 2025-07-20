@@ -39,7 +39,7 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
     switch (type) {
         case Mode::DOUBLE_TAP_TO_WAKE: {
             int fd = open(TOUCH_DEV_PATH, O_RDWR);
-            int arg[3] = {TOUCH_ID, TOUCH_DOUBLETAP_MODE, enabled ? 1 : 0};
+            int arg[3] = {TOUCH_DOUBLETAP_MODE, enabled ? 1 : 0};
             ioctl(fd, TOUCH_IOC_SETMODE, &arg);
             close(fd);
             return true;
