@@ -13,5 +13,6 @@ allow hal_fingerprint_default vendor_displayfeature_device:chr_file rw_file_perm
 allow hal_fingerprint_default mitee_client_device:chr_file { ioctl read write open };
 allow hal_fingerprint_default hal_xiaomi_fingerprint_hwservice:hwservice_manager { add find };
 allow hal_fingerprint_default self:capability sys_nice;
+allow hal_fingerprint_default touchfeature_device:chr_file rw_file_perms;
 
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)

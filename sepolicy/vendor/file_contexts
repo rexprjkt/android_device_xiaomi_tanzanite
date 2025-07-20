@@ -76,6 +76,9 @@
 # Thermal
 /(vendor|system/vendor)/bin/mi_thermald                                                                u:object_r:vendor_mi_thermald_exec:s0
 
+# Touchfeatures
+/dev/xiaomi-touch u:object_r:touchfeature_device:s0
+
 # Trusted Execution Environment (TEE)
 /(vendor|system/vendor)/bin/tee-supplicant                                                             u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/miteelog                                                                   u:object_r:tee_exec:s0
