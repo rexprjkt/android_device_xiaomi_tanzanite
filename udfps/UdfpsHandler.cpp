@@ -32,6 +32,12 @@
 #define FOD_STATUS_OFF 0
 #define FOD_STATUS_ON 1
 
+#define SET_CUR_VALUE 0
+#define Touch_Fod_Enable 10
+#define TOUCH_MAGIC 't'
+#define TOUCH_IOC_SETMODE _IO(TOUCH_MAGIC, SET_CUR_VALUE)
+
+#define TOUCH_DEV_PATH "/dev/xiaomi-touch"
 #define DISP_FEATURE_PATH "/dev/mi_display/disp_feature"
 
 #define FINGERPRINT_ACQUIRED_VENDOR 7
@@ -89,6 +95,7 @@ class XiaomiTanzaniteUdfpsHandler : public UdfpsHandler {
     void init(fingerprint_device_t* device) {
         mDevice = device;
         disp_fd_ = android::base::unique_fd(open(DISP_FEATURE_PATH, O_RDWR));
+        touch_fd_ = android::base::unique_fd(open(TOUCH_DEV_PATH, O_RDWR));
 
         // Thread to listen for fod ui changes
         std::thread([this]() {
@@ -189,13 +196,19 @@ class XiaomiTanzaniteUdfpsHandler : public UdfpsHandler {
   private:
     fingerprint_device_t* mDevice;
     android::base::unique_fd disp_fd_;
+    android::base::unique_fd touch_fd_;
     uint32_t lastPressX, lastPressY;
 
     void setFodStatus(int value) {
         set(FOD_STATUS_PATH, value);
+        int arg[3] = {Touch_Fod_Enable, value};
+        ioctl(touch_fd_, TOUCH_IOC_SETMODE, &arg);
     }
 
     void setFingerDown(bool pressed) {
+        // xiaomi-touch
+        int arg[3] = {Touch_Fod_Enable, pressed ? 1 : 0};
+        ioctl(touch_fd_, TOUCH_IOC_SETMODE, &arg);
 
         // Request HBM
         disp_local_hbm_req req;
