@@ -72,6 +72,8 @@
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
+        <fqname>@1.0::IRadio/imsAospSlot1</fqname>
+        <fqname>@1.0::IRadio/imsAospSlot2</fqname>
         <fqname>@1.2::IRadio/em1</fqname>
         <fqname>@1.2::IRadio/em2</fqname>
         <fqname>@1.2::IRadio/imsAospSlot1</fqname>
@@ -224,6 +226,8 @@
     <hal format="hidl">
         <name>vendor.mediatek.hardware.mtkradioex</name>
         <transport>hwbinder</transport>
+        <fqname>@2.0::IMtkRadioEx/imsSlot1</fqname>
+        <fqname>@2.0::IMtkRadioEx/imsSlot2</fqname>
         <fqname>@3.0::IMtkRadioEx/imsSlot1</fqname>
         <fqname>@3.0::IMtkRadioEx/imsSlot2</fqname>
         <fqname>@3.0::IMtkRadioEx/mtkAssist1</fqname>
