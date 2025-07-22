@@ -189,6 +189,7 @@ ro.vendor.pq.mtk_video_transition=0
 
 # Radio
 persist.radio.multisim.config=dsds
+persist.vendor.ims_support=1
 persist.vendor.md_c2k_cap_dep_check=0
 persist.vendor.mdrsra_v2_support=1
 persist.vendor.mims_support=2
@@ -209,7 +210,9 @@ persist.vendor.radio.mtk_dsbp_support=2
 persist.vendor.radio.mtk_ps2_rat=L/W/G
 persist.vendor.radio.mtk_ps3_rat=G
 persist.vendor.radio.smart.data.switch=1
+persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
+persist.vendor.volte_support=1
 persist.vendor.xfrm_support=1
 ro.mtk_key_manager_support=1
 ro.telephony.default_network=10,10,10,10
