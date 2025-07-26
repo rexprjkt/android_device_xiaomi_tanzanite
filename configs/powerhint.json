@@ -312,15 +312,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "PowerHALMainState",
-      "Path": "vendor.powerhal.state",
-      "Values": [
-        "SUSTAINED_PERFORMANCE",
-        ""
-      ],
-      "Type": "Property"
-    },
-    {
       "Name": "PowerHALRenderingState",
       "Path": "vendor.powerhal.rendering",
       "Values": [
@@ -426,11 +417,6 @@
       "Value": "51"
     },
     {
-      "PowerHint": "DISPLAY_IDLE",
-      "Type": "DoHint",
-      "Value": "DISPLAY_INACTIVE"
-    },
-    {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "ForegroundCpuset",
       "Duration": 0,
@@ -448,53 +434,35 @@
       "Duration": 0,
       "Value": "0-3"
     },
-    {
-      "PowerHint": "SUSTAINED_PERFORMANCE",
-      "Node": "PowerHALMainState",
+        {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "RestrictedCpuset",
       "Duration": 0,
-      "Value": "SUSTAINED_PERFORMANCE"
+      "Value": "0-3"
     },
     {
-      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "2200000"
     },
     {
-      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
       "Value": "2000000"
     },
     {
-      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "PowerHint": "FIXED_PERFORMANCE",
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "0"
     },
     {
-      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "PowerHint": "FIXED_PERFORMANCE",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "9999999999"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "CPULittleClusterMinFreq",
-      "Duration": 0,
-      "Value": "500000"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
-      "Value": "725000"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "GpuPwrLevel",
-      "Duration": 0,
-      "Value": "15"
     },
     {
       "PowerHint": "GAME",
@@ -518,12 +486,6 @@
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "5"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "RestrictedCpuset",
-      "Duration": 0,
-      "Value": "0-3"
     }
   ]
 }
