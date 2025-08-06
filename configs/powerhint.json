@@ -465,6 +465,12 @@
       "Value": "9999999999"
     },
     {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "UclampTAMin",
+      "Duration": 0,
+      "Value": "100"
+    },
+    {
       "PowerHint": "GAME",
       "Type": "EndHint",
       "Value": "INTERACTION"
