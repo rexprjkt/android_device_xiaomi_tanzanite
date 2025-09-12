@@ -16,3 +16,6 @@ type proc_mitee_log, fs_type, proc_type;
 
 # Thermal
 type vendor_sysfs_thermalconfig, sysfs_type, fs_type;
+
+# Perf
+type proc_vm_dirty, fs_type, proc_type;

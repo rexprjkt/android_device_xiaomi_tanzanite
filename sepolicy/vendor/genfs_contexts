@@ -57,3 +57,7 @@ genfscon sysfs /devices/platform/soc/1f000000.mdp/wakeup u:object_r:sysfs_wakeup
 
 # USB
 genfscon sysfs /devices/platform/rt-pd-manager/typec/port0                         u:object_r:sysfs_usb_nonplat:s0
+
+# VM stuff
+genfscon proc /sys/vm/vfs_cache_pressure            u:object_r:proc_drop_caches:s0
+genfscon proc /sys/vm/dirty_ratio                   u:object_r:proc_dirty:s0
