@@ -1,0 +1,3 @@
+allow devicesettings_app sysfs_therm:dir search;
+allow devicesettings_app sysfs_therm:file { write };
+allow devicesettings_app sysfs_therm:file { getattr open read };
