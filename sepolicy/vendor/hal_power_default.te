@@ -9,6 +9,7 @@ allow hal_power_default sysfs_gpu:dir search;
 allow hal_power_default sysfs_ged:dir search;
 allow hal_power_default sysfs_ged:file rw_file_perms;
 allow hal_power_default vendor_sysfs_thermalconfig:file rw_file_perms;
+allow hal_power_default sysfs_therm:dir search;
 
 # Touchfeature (xiaomi-touch)
 allow hal_power_default touchfeature_device:chr_file rw_file_perms;
