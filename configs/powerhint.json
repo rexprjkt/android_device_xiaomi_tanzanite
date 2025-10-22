@@ -546,6 +546,11 @@
       "Node": "ThermalSConfig",
       "Duration": 0,
       "Value": "10"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Type": "EndHint",
+      "Value": "INTERACTION"
     }
   ]
 }
