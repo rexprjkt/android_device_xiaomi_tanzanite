@@ -93,8 +93,6 @@ public class GameBar {
     private boolean mShowRam         = false;
     private boolean mShowFps         = false;
 
-    private boolean mShowGpuUsage    = false;
-    private boolean mShowGpuClock    = false;
     private boolean mShowGpuTemp     = false;
 
     private boolean mLongPressEnabled      = false;
@@ -181,8 +179,6 @@ public class GameBar {
         mShowCpuTemp     = prefs.getBoolean("game_bar_cpu_temp_enable", false);
         mShowRam         = prefs.getBoolean("game_bar_ram_enable", false);
 
-        mShowGpuUsage    = prefs.getBoolean("game_bar_gpu_usage_enable", false);
-        mShowGpuClock    = prefs.getBoolean("game_bar_gpu_clock_enable", false);
         mShowGpuTemp     = prefs.getBoolean("game_bar_gpu_temp_enable", false);
 
         mDoubleTapCaptureEnabled = prefs.getBoolean("game_bar_doubletap_capture", false);
@@ -384,20 +380,6 @@ public class GameBar {
             statViews.add(createStatLine("RAM", "N/A".equals(ramStr) ? "N/A" : ramStr + " MB"));
         }
 
-        // 7) GPU usage
-        String gpuUsageStr = "N/A";
-        if (mShowGpuUsage) {
-            gpuUsageStr = GameBarGpuInfo.getGpuUsage();
-            statViews.add(createStatLine("GPU", "N/A".equals(gpuUsageStr) ? "N/A" : gpuUsageStr + "%"));
-        }
-
-        // 8) GPU clock
-        String gpuClockStr = "N/A";
-        if (mShowGpuClock) {
-            gpuClockStr = GameBarGpuInfo.getGpuClock();
-            statViews.add(createStatLine("GPU Freq", "N/A".equals(gpuClockStr) ? "N/A" : gpuClockStr + "MHz"));
-        }
-
         // 9) GPU temp
         String gpuTempStr = "N/A";
         if (mShowGpuTemp) {
@@ -437,8 +419,6 @@ public class GameBar {
                     batteryTempStr,
                     cpuUsageStr,
                     cpuTempStr,
-                    gpuUsageStr,
-                    gpuClockStr,
                     gpuTempStr
             );
         }
@@ -571,8 +551,6 @@ public class GameBar {
     public void setShowRam(boolean show)         { mShowRam = show; }
     public void setShowFps(boolean show)         { mShowFps = show; }
 
-    public void setShowGpuUsage(boolean show)    { mShowGpuUsage = show; }
-    public void setShowGpuClock(boolean show)    { mShowGpuClock = show; }
     public void setShowGpuTemp(boolean show)     { mShowGpuTemp = show; }
 
     public void updateTextSize(int sp) {

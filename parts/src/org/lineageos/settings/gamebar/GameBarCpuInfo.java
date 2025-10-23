@@ -29,7 +29,12 @@ public class GameBarCpuInfo {
     private static long sPrevIdle = -1;
     private static long sPrevTotal = -1;
 
-    private static final String CPU_TEMP_PATH = "/sys/class/thermal/thermal_zone0/temp";
+    private static final String[] CPU_TEMP_PATHS = new String[16];
+    static {
+        for (int i = 0; i <= 15; i++) {
+            CPU_TEMP_PATHS[i] = "/sys/class/thermal/thermal_zone" + (10 + i) + "/temp";
+        }
+    }
 
     public static String getCpuUsage() {
         String line = readLine("/proc/stat");
@@ -57,7 +62,6 @@ public class GameBarCpuInfo {
                 sPrevIdle  = idle;
                 return String.valueOf(usage);
             } else {
-
                 sPrevTotal = total;
                 sPrevIdle  = idle;
                 return "N/A";
@@ -99,16 +103,24 @@ public class GameBarCpuInfo {
     }
 
     public static String getCpuTemp() {
-        String line = readLine(CPU_TEMP_PATH);
-        if (line == null) return "N/A";
-        line = line.trim();
-        try {
-            float raw = Float.parseFloat(line);
-            float c   = raw / 1000f;
-            return String.format("%.1f", c);
-        } catch (NumberFormatException e) {
-            return "N/A";
+        float total = 0f;
+        int count = 0;
+
+        for (String path : CPU_TEMP_PATHS) {
+            String line = readLine(path);
+            if (line == null) continue;
+            line = line.trim();
+            try {
+                float raw = Float.parseFloat(line);
+                total += raw / 1000f; // convert millidegree to Celsius
+                count++;
+            } catch (NumberFormatException ignored) {}
         }
+
+        if (count == 0) return "N/A";
+
+        float avg = total / count;
+        return String.format("%.1f", avg);
     }
 
     private static int extractCpuNumber(java.io.File cpuFolder) {

@@ -26,18 +26,6 @@
             android:defaultValue="false" />
 
         <SwitchPreferenceCompat
-            android:key="game_bar_cpu_usage_enable"
-            android:title="CPU Usage"
-            android:summary="Show current CPU usage percentage"
-            android:defaultValue="false" />
-
-        <SwitchPreferenceCompat
-            android:key="game_bar_cpu_clock_enable"
-            android:title="CPU Clock Speeds"
-            android:summary="Show current CPU clock speeds for each core"
-            android:defaultValue="false" />
-
-        <SwitchPreferenceCompat
             android:key="game_bar_cpu_temp_enable"
             android:title="CPU Temperature"
             android:summary="Show CPU temperature (thermal_zone0)"

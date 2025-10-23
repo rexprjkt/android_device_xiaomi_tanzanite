@@ -22,52 +22,30 @@ import java.io.IOException;
 
 public class GameBarGpuInfo {
 
-    private static final String GPU_USAGE_PATH = "/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage";
-    private static final String GPU_CLOCK_PATH = "/sys/class/kgsl/kgsl-3d0/gpuclk";
-    private static final String GPU_TEMP_PATH  = "/sys/class/kgsl/kgsl-3d0/temp";
+    private static final String[] GPU_TEMP_PATHS = {
+        "/sys/class/thermal/thermal_zone10/temp",
+        "/sys/class/thermal/thermal_zone9/temp"
+    };
 
-    public static String getGpuUsage() {
-        String line = readLine(GPU_USAGE_PATH);
-        if (line == null) {
-            return "N/A";
-        }
-        line = line.replace("%", "").trim();
-        try {
-            int val = Integer.parseInt(line);
-            return String.valueOf(val);
-        } catch (NumberFormatException e) {
-            return "N/A";
-        }
-    }
+public static String getGpuTemp() {
+        float total = 0f;
+        int count = 0;
 
-    public static String getGpuClock() {
-        String line = readLine(GPU_CLOCK_PATH);
-        if (line == null) {
-            return "N/A";
+        for (String path : GPU_TEMP_PATHS) {
+            String line = readLine(path);
+            if (line == null) continue;
+            line = line.trim();
+            try {
+                float raw = Float.parseFloat(line);
+                total += raw / 1000f; // convert millidegree to Celsius
+                count++;
+            } catch (NumberFormatException ignored) {}
         }
-        line = line.trim();
-        try {
-            long hz = Long.parseLong(line);
-            long mhz = hz / 1_000_000;
-            return String.valueOf(mhz);
-        } catch (NumberFormatException e) {
-            return "N/A";
-        }
-    }
 
-    public static String getGpuTemp() {
-        String line = readLine(GPU_TEMP_PATH);
-        if (line == null) {
-            return "N/A";
-        }
-        line = line.trim();
-        try {
-            float raw = Float.parseFloat(line);
-            float c   = raw / 1000f;
-            return String.format("%.1f", c);
-        } catch (NumberFormatException e) {
-            return "N/A";
-        }
+        if (count == 0) return "N/A";
+
+        float avg = total / count;
+        return String.format("%.1f", avg);
     }
 
     private static String readLine(String path) {
