@@ -283,6 +283,10 @@ external_storage.sdcardfs.enabled=0
 ro.vendor.mtk_emmc_support=1
 ro.vendor.mtk_f2fs_enable=1
 
+# SOC
+ro.soc.manufacturer=Mediatek
+ro.soc.model=MT6789G
+
 # TEE
 ro.vendor.mtk_microtrust_tee_support=1
 ro.vendor.mtk_svp_on_mtee_support=2
