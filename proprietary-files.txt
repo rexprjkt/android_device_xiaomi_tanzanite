@@ -1416,7 +1416,6 @@ vendor/etc/slp_conf
 # Graphics
 vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
 vendor/etc/meow.cfg
-vendor/lib/egl/egl.cfg
 vendor/lib64/egl/mt6789/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so
