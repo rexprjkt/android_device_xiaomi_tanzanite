@@ -105,15 +105,5 @@
             android:exported="true"
             android:permission="RefreshService">
         </service>
-
-        <!-- Service for Double Tap to Wake gesture -->
-        <service 
-            android:name=".touch.DoubleTapService"
-            android:exported="false"/>
-
-        <!-- Service for SoFod Touch feature -->
-        <service
-            android:name=".touch.SoFodTouchService"
-            android:exported="false"/>
     </application>
 </manifest>
