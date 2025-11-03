@@ -8,6 +8,7 @@ r_dir_file(vendor_mi_thermald, sysfs_batteryinfo)
 r_dir_file(vendor_mi_thermald, sysfs_leds)
 rw_dir_file(vendor_mi_thermald, sysfs_power_supply)
 r_dir_file(vendor_mi_thermald, sysfs_therm)
+r_dir_file(vendor_mi_thermald, vendor_sysfs_thermalconfig)
 r_dir_file(vendor_mi_thermald, sysfs_thermal_sram)
 
 set_prop(vendor_mi_thermald, vendor_thermal_prop)
