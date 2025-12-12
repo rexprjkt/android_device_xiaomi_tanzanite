@@ -76,7 +76,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default:64
 
 PRODUCT_PACKAGES += \
-    audio_policy.stub \
     libaudiofoundation.vendor \
     libalsautils \
     libnbaio_mono \
