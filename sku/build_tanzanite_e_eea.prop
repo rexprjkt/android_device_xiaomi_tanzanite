@@ -8,7 +8,6 @@ ro.product.odm.model=24117RN76E
 ro.product.odm.cert=24117RN76E
 ro.product.odm.name=tanzanite_eea
 ro.product.odm.marketname=Redmi Note 14
-ro.product.marketname=Redmi Note 14
 ro.build.display.id=AL7297A-tanzanite-build-20260126023144
 ro.odm.build.display.id=AL7297A-tanzanite-build-20260126023144
 ro.product.model_for_attestation=24117RN76E
