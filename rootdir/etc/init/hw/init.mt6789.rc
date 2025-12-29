@@ -636,10 +636,6 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-    write /dev/sys/fs/by-name/userdata/iostat_enable 0
-    write /dev/sys/fs/by-name/userdata/cp_interval 6000
-    write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 200
-
     # Media C2
     restart android-hardware-media-c2-hal-1-2
 
