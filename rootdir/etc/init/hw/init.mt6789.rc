@@ -64,6 +64,9 @@ on charger
     chown system system /sys/class/leds/lcd-backlight/brightness
     start mi_thermald
 
+    chown system system /dev/graphics/fb0
+    chown system system /dev/dri/card0
+
 on early-fs
     write /proc/bootprof "INIT:early-fs"
 
