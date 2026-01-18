@@ -305,7 +305,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mtk.cfg \
-    init.batterysecret.rc \
     init.connectivity.rc \
     init.fingerprint.rc \
     init.modem.rc \
