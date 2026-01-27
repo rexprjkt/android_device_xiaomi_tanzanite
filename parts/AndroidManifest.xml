@@ -43,16 +43,6 @@
         </receiver>
 
         <activity
-            android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_title"
-            android:exported="true">
-        </activity>
-
-        <service android:name=".doze.DozeService"
-                 android:permission="XiaomiDozeService">
-        </service>
-
-        <activity
             android:name=".thermal.ThermalActivity"
             android:label="@string/thermal_title"
             android:exported="true">
@@ -125,42 +115,5 @@
                 <category android:name="android.intent.category.DEFAULT" />
              </intent-filter>
         </receiver>
-
-        <activity
-            android:name=".speaker.ClearSpeakerActivity" 
-            android:label="@string/clear_speaker_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.sound" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/clear_speaker_summary" />
-        </activity>
-
-        <activity
-            android:name=".refreshrate.RefreshActivity"
-            android:label="@string/refresh_title"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.display" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/refresh_summary" />
-        </activity>
-
-        <!-- Service for refresh rate management -->
-        <service
-            android:name=".refreshrate.RefreshService"
-            android:exported="true"
-            android:permission="RefreshService">
-        </service>
     </application>
 </manifest>
