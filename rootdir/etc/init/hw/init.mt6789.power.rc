@@ -141,6 +141,9 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor "schedutil"
     write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
 
+    # Set GPU governor to simple_ondemand
+    write /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor "simple_ondemand"
+
 on charger
     chmod 0664 /sys/class/Charging_Adapter/pd_adapter/usbpd_verifed
     chmod 0664 /sys/class/Charging_Adapter/pd_adapter/request_vdm_cmd
