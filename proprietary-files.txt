@@ -1,4 +1,4 @@
-# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.202.0.VOGEUXM release-keys
+# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.213.0.VOGEUXM release-keys
 
 # AAL
 vendor/lib64/libaal_cust.so
