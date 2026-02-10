@@ -167,7 +167,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/hwcomposer.mtk_common.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
     'vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so': blob_fixup()
-        .add_needed('libui_shim.so'),
+        .add_needed('libui_shim.so')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/lib64/librt_extamp_intf.so': blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 }  # fmt: skip
