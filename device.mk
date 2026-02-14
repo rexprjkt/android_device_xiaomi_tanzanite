@@ -257,8 +257,7 @@ $(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     wpa_supplicant \
-    hostapd \
-    libwifi-hal-wrapper:64
+    hostapd
 
 # Wifi configs
 PRODUCT_COPY_FILES += \
@@ -362,6 +361,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libaedv \
     hardware/mediatek/libmtkperf_client \
+    hardware/mediatek/wlan/wifi_hal \
     hardware/xiaomi \
     hardware/google/interfaces \
     hardware/google/pixel
