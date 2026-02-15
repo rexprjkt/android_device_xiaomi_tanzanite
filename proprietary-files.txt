@@ -1417,11 +1417,6 @@ vendor/etc/slp_conf
 vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
 vendor/etc/meow.cfg
 vendor/lib/egl/egl.cfg
-vendor/lib64/egl/libGLES_meow.so
-vendor/lib64/egl/libMEOW_data.so
-vendor/lib64/egl/libMEOW_gift.so
-vendor/lib64/egl/libMEOW_qt.so
-vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/egl/mt6789/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so
@@ -1429,9 +1424,6 @@ vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6789/gralloc.common.so
 vendor/lib64/hw/mt6789/vulkan.mali.so
 vendor/lib64/mt6789/libgpudataproducer.so
-vendor/lib64/libDefaultFpsActor.so
-vendor/lib64/libFrameRecord.so
-vendor/lib64/libNoFpsActor.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libged.so
