@@ -23,6 +23,7 @@ $(call inherit-product, vendor/mediatek/ims/ims.mk)
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
     boot \
+    dtbo \
     vendor_boot \
     system \
     system_ext \
