@@ -72,4 +72,7 @@
 
     <!-- Whether to play turbulence noise after clicking the play button -->
     <bool name="config_turbulenceNoise">false</bool>
+
+    <!-- Blur radius behind Notification Shade -->
+    <dimen name="max_shade_window_blur_radius">23dp</dimen>
 </resources>
