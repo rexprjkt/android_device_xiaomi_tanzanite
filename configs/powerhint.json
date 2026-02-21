@@ -426,7 +426,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUBlockBoost",
       "Duration": 0,
-      "Value": "50"
+      "Value": "101"
     },
     {
       "PowerHint": "ML_ACC",
@@ -437,7 +437,7 @@
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
+      "Duration": 1000,
       "Value": "2000000"
     },
     {
@@ -546,6 +546,12 @@
       "Node": "ThermalSConfig",
       "Duration": 0,
       "Value": "10"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "MemFreq",
+      "Duration": 4000,
+      "Value": "4266000000"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
