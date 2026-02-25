@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/*
-** Copyright 2009, The Android Open Source Project
-**
-** Licensed under the Apache License, Version 2.0 (the "License");
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds.  Do not translate.
-     NOTE: The naming convention is "config_camelCaseValue". Some legacy
-     entries do not follow the convention, but all new entries should. -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <!-- boolean indicating whether the WiFi chipset has 5GHz band support. -->
     <bool translatable="false" name="config_wifi5ghzSupport">true</bool>
 
@@ -33,8 +16,14 @@
          capability can provide power savings when wifi needs to be always kept on. -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
+    <!-- Wifi driver supports IEEE80211AC for softap -->
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
+
+    <!-- Wifi driver supports IEEE80211AX for softap -->
+    <bool name="config_wifiSoftapIeee80211axSupported">true</bool>
+
     <!-- Indicates that connected MAC randomization is supported on this device -->
-    <bool translatable="false" name="config_wifi_connected_mac_randomization_supported">true</bool>
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
 
     <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
     <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
@@ -43,6 +32,11 @@
          channels this should be empty. Values is a comma separated channel string and/or channel
          range string like '1-6,11'. -->
     <string  translatable="false" name="config_wifiSoftap2gChannelList">1-13</string>
+
+    <!-- Array describing scanning schedule in seconds when device is disconnected and screen is on -->
+    <integer-array name="config_wifiDisconnectedScanIntervalScheduleSec">
+        <item>20</item>
+    </integer-array>
 
     <!-- List of allowed channels in 5GHz band for softap. If the device doesn't want to restrict
          channels this should be empty. Values is a comma separated channel string and/or channel
@@ -53,16 +47,76 @@
          range string like '36-48,149'. -->
     <string  translatable="false" name="config_wifiSoftap6gChannelList">5,21,37,53,69,85,101,117,133,149,165,181,197,213,229</string>
 
+    <!-- List of constants to indicate how many failures are needed to temporarily disable a network
+    from auto-connect -->
+    <integer name="config_wifiDisableReasonAssociationRejectionThreshold">5</integer>
+    <integer name="config_wifiDisableReasonAuthenticationFailureThreshold">5</integer>
+
     <!-- Wifi driver supports Automatic channel selection (ACS) for softap -->
     <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
 
     <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
     <bool translatable="false" name="config_wifi_softap_sae_supported">true</bool>
 
-    <!-- Wifi driver supports IEEE80211AC for softap -->
-    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
+    <!-- Controls whether a wifi connection with RSSI lower than the sufficient RSSI will be
+    temporarily disabled when it is unwanted by core networking -->
+    <bool name="config_wifiDisableUnwantedNetworkOnLowRssi">true</bool>
+
+    <!-- Interval Multiplier for PNO scan. After not finding any networks for
+         config_wifiPnoScanIterations, PNO will multiply the scan interval by the value
+         configured.-->
+    <integer name="config_wifiPnoScanIntervalMultiplier">6</integer>
+
+    <!-- Whether we should apply APF filters on non primary STA connections when STA + STA is active.
+         Defaults to false since most wifi chips cannot support concurrent APF filter set needed for STA + STA-->
+    <bool name="config_wifiEnableApfOnNonPrimarySta">true</bool>
 
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
     <string name="config_wifi_tcp_buffers">1730560,3461120,6922240,524288,1048576,4525824</string>
+
+    <!-- Whether to allow Settings or SUW to create insecure Enterprise networks where server
+         certificate is not validated, by not specifying a Root CA certificate and/or server domain
+         name. It is STRONGLY RECOMMENDED to be set to false -->
+    <bool name="config_wifiAllowInsecureEnterpriseConfigurationsForSettingsAndSUW">true</bool>
+
+    <!-- Indicates the time in milliseconds to wait after creating a P2P interface before treating
+         it as low priority when disconnected, allowing it to be deleted to create other
+         interfaces. A negative value disables this behavior. -->
+    <integer name="config_disconnectedP2pIfaceLowPriorityTimeoutMs">0</integer>
+
+    <!-- Lists each alternate character set per locale language for SSID translation to UTF-8. This
+         will translate all SSIDs encoded with the specified character set from the native layer
+         into UTF-8 SSIDs. The translated SSIDs are then converted back to the original character
+         set when passed back to the native layer. This effectively switches all non-UTF-8 APs into
+         UTF-8 APs from the perspective of the framework and apps, and is intended to provide
+         backwards compatibility with apps that only work with UTF-8 SSIDs. Values must be in the
+         form of the locale language and canonical java.nio Charset name, separated by a comma. If
+         the locale language is "all", then the character set will apply to all locale languages
+         that do not specify their own character set. -->
+    <string-array name="config_wifiCharsetsForSsidTranslation">
+        <item>all,GBK</item>
+    </string-array>
+
+    <!-- Indicates whether or not the WLAN driver supports the NL80211_CMD_REG_CHANGE or
+         NL80211_CMD_WIPHY_REG_CHANGE events which indicate the current country code which is
+         being used by the WLAN driver. If the driver doesn't support these events
+         (configuration is `false`) then the driver must handle the setCountryCode request from
+         HAL as a blocking call. In such a case the country code will be applied
+         immediately after the country code is sent to the driver (if the method returns a
+         success). -->
+    <bool name="config_wifiDriverSupportedNl80211RegChangedEvent" translatable="false">false</bool>
+
+    <!-- IP address configurations required for P2P GO to assign IP address in EAPOL frame.
+         Refer - Wi-Fi P2P Technical Specification v1.7 - Section  4.2.8 IP Address Allocation
+         in EAPOL-Key Frames (4-Way Handshake) for more details.
+         To enable this feature, configure below three items,
+         1. config_tether_enable_legacy_wifi_p2p_dedicated_ip in tethering module overlay file,
+            i.e.,  in packages/modules/Connectivity/Tethering/res/values/config.xml
+         2. config_p2p_leases_subnet_prefix_length in tethering module overlay config file,
+            i.e., in packages/modules/Connectivity/Tethering/res/values/config.xml
+         3. Set config_wifiP2pGoIpAddressAllocationInEapolFrames to true in wifi overlay file -->
+    <!-- Boolean indicating whether IP address allocation in EAPOL is enabled by default in Wi-Fi.
+         The GO fixed IP address is set to 192.168.49.1 and subnet mask to 255.255.255.0 -->
+    <bool name="config_wifiP2pGoIpAddressAllocationInEapolFrames">true</bool>
 </resources>
