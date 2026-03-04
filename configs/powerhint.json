@@ -256,13 +256,6 @@
       "HoldFd": true
     },
     {
-      "Name": "GPUBlockBoost",
-      "Path": "/sys/kernel/ged/hal/gpu_boost_level",
-      "Values": ["101", "50", "0", "-1"],
-      "ResetOnInit": true,
-      "DefaultIndex": 2
-    },
-    {
       "Name": "CDCpuset",
       "Path": "/dev/cpuset/camera-daemon/cpus",
       "Values": [
@@ -405,12 +398,6 @@
       "Value": "9999999999"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Node": "GPUBlockBoost",
-      "Duration": 5000,
-      "Value": "101"
-    },
-    {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "PowerHALRenderingState",
       "Duration": 0,
@@ -421,12 +408,6 @@
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "0"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUBlockBoost",
-      "Duration": 0,
-      "Value": "101"
     },
     {
       "PowerHint": "ML_ACC",
