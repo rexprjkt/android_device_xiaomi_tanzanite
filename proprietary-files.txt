@@ -1,4 +1,4 @@
-# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.213.0.VOGEUXM release-keys
+# All blobs are from OS2.0.213.0.VOGEUXM unless noted or pinned
 
 # AAL
 vendor/lib64/libaal_cust.so
@@ -1411,12 +1411,10 @@ vendor/etc/slp_conf
 # Graphics
 vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
 vendor/etc/meow.cfg
-vendor/lib64/egl/mt6789/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.mtk_common.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/mt6789/gralloc.common.so
-vendor/lib64/hw/mt6789/vulkan.mali.so
 vendor/lib64/mt6789/libgpudataproducer.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libcomposer_ext.so
@@ -1431,10 +1429,28 @@ vendor/lib64/libion_ulit.so
 vendor/lib64/libladder.so
 vendor/lib64/libmml.so
 vendor/lib64/libpixelflinger.so
-vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so
 vendor/lib64/mt6789/libaiselector.so
 vendor/lib64/mt6789/libdpframework.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
+
+# Display (Mali)
+vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so
+
+# Display (Mali) - from XT2513-1_KANSAS_OPENLA_15_V1VK35.22-125_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC
+vendor/lib64/egl/mt6835/libGLES_mali.so:vendor/lib64/egl/mt6789/libGLES_mali.so|0d7ee65504a0bedc798b900cbb96f41b6b88b038
+vendor/lib64/hw/mt6835/vulkan.mali.so:vendor/lib64/hw/mt6789/vulkan.mali.so|a85b914d28400ecf0e9532840e57e844cc13739a
+vendor/etc/gralloc/cam.xml|f6cb02f33dd9f1aadb0a829281ad488729ea2106
+vendor/etc/gralloc/dpu.xml|5be2bc6cd7c0ca4de485db54f0e06ccb9f57ab0c
+vendor/etc/gralloc/dpu_aeu.xml|94355caa28c4d7609a53db8ed9ba179370c991b5
+vendor/etc/gralloc/gpu.xml|0f6cc052e256cbf18caa0972a88766f4a14a0cd6
+vendor/etc/gralloc/vpu.xml|df22091da7830747f2eeba1a00faf0b87bcb0402
+vendor/etc/mali_platform.config|94ff34a831e05876d8af800f09847c5f2a336bcd
+
+# Display (Mali) - from Nothing Phone (2a) (Pacman-B4.0-260225-1817).
+vendor/lib64/mt6886/arm.graphics-V3-ndk.so:vendor/lib64/mt6789/arm.graphics-V3-ndk.so|34a267b511f2ac56573c2ea66deee9cb739eac37
+vendor/lib64/libarm_egl_properties_sysprop.so|a5b4216f63c4539a1a95379a38aee8c94bd39548
+vendor/lib64/libarm_gralloc_properties_sysprop.so|76e7e5f8d879afc15e17902c87acfb33fed9bef6
+vendor/lib64/liblibarm_mali_config_sysprops.so|eca4cde8c0b75288a8af6a63a2edb2b47f58b163
 
 # Keymint
 vendor/bin/hw/android.hardware.security.keymint@1.0-service.mitee
