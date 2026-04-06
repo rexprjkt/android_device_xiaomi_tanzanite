@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     MtkInCallService \
-    XiaomiDolby
+    LunarisDolby
 
 # Audio Configuration
 PRODUCT_COPY_FILES += \

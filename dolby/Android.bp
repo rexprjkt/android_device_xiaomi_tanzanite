@@ -1,12 +1,13 @@
 //
 // Copyright (C) 2017-2021 The LineageOS Project
 //           (C) 2023-24 Paranoid Android
+//           (C) 2024-2025 Lunaris AOSP
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 android_app {
-    name: "XiaomiDolby",
+    name: "LunarisDolby",
 
     srcs: ["src/**/*.kt"],
     resource_dirs: ["res"],
@@ -14,16 +15,24 @@ android_app {
     platform_apis: true,
     system_ext_specific: true,
     privileged: true,
+    privapp_allowlist: "privapp-permissions-dolby.xml",
 
     overrides: ["MusicFX", "AudioFX"],
     static_libs: [
-        "SettingsLib",
-        "SpaLib",
         "androidx.activity_activity-compose",
+        "androidx.compose.animation_animation",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.material3_material3",
+        "androidx.compose.material_material-icons-extended",
         "androidx.compose.runtime_runtime",
-        "androidx.preference_preference",
+        "androidx.compose.ui_ui",
+        "androidx.compose.ui_ui-tooling-preview",
+        "androidx.lifecycle_lifecycle-runtime-compose",
+        "androidx.lifecycle_lifecycle-viewmodel-compose",
+        "androidx.navigation_navigation-compose",
         "com.google.android.material_material",
-        "org.lineageos.settings.resources",
+        "kotlinx-coroutines-android",
+        "kotlinx-coroutines-core",
     ],
 
     required: ["preinstalled-packages-platform-dolby.xml"],
@@ -35,3 +44,4 @@ prebuilt_etc {
     sub_dir: "sysconfig",
     system_ext_specific: true,
 }
+
