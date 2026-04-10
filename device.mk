@@ -248,7 +248,7 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget-service.mediatek
 
 # Enable audio accessory support
-$(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,true)
+$(call soong_config_set_bool,android_hardware_mediatek_usb,audio_accessory_supported,true)
 
 # Wifi
 $(call soong_config_set,wpa_supplicant_8,wifi_disable_wpa_version_3,true)
