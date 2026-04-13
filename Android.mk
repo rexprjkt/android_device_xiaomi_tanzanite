@@ -22,6 +22,7 @@ VENDOR_PLATFORM_LINKS := \
 	$(TARGET_OUT_VENDOR)/lib/libvcodecdrv_v3a.so \
 	$(TARGET_OUT_VENDOR)/lib/libvpudv3a_vcodec.so \
 	$(TARGET_OUT_VENDOR)/lib64/arm.graphics-V1-ndk_platform.so \
+	$(TARGET_OUT_VENDOR)/lib64/arm.graphics-V3-ndk.so \
 	$(TARGET_OUT_VENDOR)/lib64/egl/libGLES_mali.so \
 	$(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so \
 	$(TARGET_OUT_VENDOR)/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so \
