@@ -1,4 +1,4 @@
-# All blobs are from OS2.0.213.0.VOGEUXM unless noted or pinned
+# All blobs are from OS2.0.214.0.VOGEUXM unless noted or pinned
 
 # AAL
 vendor/lib64/libaal_cust.so
