@@ -25,7 +25,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
-import androidx.preference.PreferenceFragmentCompat
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xiaomi.settings.R
@@ -33,7 +33,7 @@ import com.xiaomi.settings.thermal.ThermalUtils.ThermalState
 import com.xiaomi.settings.utils.dlog
 import com.android.settingslib.widget.MainSwitchBar
 
-class ThermalSettingsFragment : PreferenceFragmentCompat() {
+class ThermalSettingsFragment : SettingsBasePreferenceFragment() {
 
     private lateinit var appsAdapter: AppsAdapter
     private lateinit var launcherApps: LauncherApps

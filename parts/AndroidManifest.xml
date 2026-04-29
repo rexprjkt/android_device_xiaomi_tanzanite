@@ -46,7 +46,6 @@
         <activity
             android:name=".battery.ChargingControlActivity"
             android:label="@string/charging_control_title"
-            android:theme="@style/Theme.SubSettingsBase.Expressive"
             android:exported="true">
             <intent-filter android:priority="1">
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -61,7 +60,6 @@
         <activity
             android:name=".thermal.ThermalSettingsActivity"
             android:label="@string/thermal_title"
-            android:theme="@style/Theme.SubSettingsBase.Thermal"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -78,7 +76,6 @@
         <activity
             android:name=".gamebar.GameBarSettingsActivity"
             android:label="@string/game_bar_title"
-            android:theme="@style/Theme.SubSettingsBase"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
