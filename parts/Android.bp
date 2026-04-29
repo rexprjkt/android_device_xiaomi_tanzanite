@@ -21,8 +21,7 @@ android_app {
         "androidx.preference_preference",
         "com.google.android.material_material",
         "org.lineageos.settings.resources",
-        "SettingsLib",
-        "vendor.xiaomi.hardware.displayfeature_aidl-V2-java"
+        "SettingsLib"
     ],
     required: [
         "privapp_whitelist_com.xiaomi.settings.xml",

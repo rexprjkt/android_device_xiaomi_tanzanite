@@ -12,7 +12,6 @@ import android.content.Intent
 import android.os.UserHandle
 import android.util.Log
 import com.xiaomi.settings.battery.ChargingLimitService
-import com.xiaomi.settings.display.ColorModeService
 import com.xiaomi.settings.thermal.ThermalUtils
 
 /** Everything begins at boot. */
@@ -35,9 +34,6 @@ class BootCompletedReceiver : BroadcastReceiver() {
     }
 
     private fun onLockedBootCompleted(context: Context) {
-        // Display
-        context.startServiceAsUser(Intent(context, ColorModeService::class.java), UserHandle.CURRENT)
-
         // Thermal
         ThermalUtils.getInstance(context).startService()
 

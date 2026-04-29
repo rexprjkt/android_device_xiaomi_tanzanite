@@ -39,7 +39,6 @@
         </receiver>
 
         <!-- Services -->
-        <service android:name=".display.ColorModeService" />
         <service android:name=".battery.ChargingLimitService" />
         <service android:name=".thermal.ThermalService" />
 
