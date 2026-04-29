@@ -23,7 +23,7 @@ class ChargingControlFragment : SettingsBasePreferenceFragment(),
     private var mMasterSwitch: MainSwitchPreference? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        addPreferencesFromResource(R.xml.charging_control_settings)
+        setPreferencesFromResource(R.xml.charging_control_settings, rootKey)
 
         mLimitPref = findPreference<SeekBarPreference>(BatteryUtils.PREF_CHARGING_LIMIT)?.apply {
             onPreferenceChangeListener = this@ChargingControlFragment
@@ -49,14 +49,12 @@ class ChargingControlFragment : SettingsBasePreferenceFragment(),
         val currentLevel = getBatteryLevel()
         BatteryUtils.setChargingSuspendAsync(isEnabled && currentLevel >= limit)
 
-        context?.let { ctx ->
-            ctx.startService(Intent(ctx, ChargingLimitService::class.java))
-        }
+        requireContext().startService(Intent(requireContext(), ChargingLimitService::class.java))
         return true
     }
 
     private fun getBatteryLevel(): Int {
-        val bm = context?.getSystemService(Context.BATTERY_SERVICE) as? BatteryManager
+        val bm = requireContext().getSystemService(Context.BATTERY_SERVICE) as? BatteryManager
         return bm?.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY) ?: 0
     }
 

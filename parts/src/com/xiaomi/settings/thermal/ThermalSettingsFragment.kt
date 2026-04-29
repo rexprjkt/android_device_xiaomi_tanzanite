@@ -25,7 +25,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
-import androidx.preference.PreferenceFragment
+import androidx.preference.PreferenceFragmentCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xiaomi.settings.R
@@ -33,7 +33,7 @@ import com.xiaomi.settings.thermal.ThermalUtils.ThermalState
 import com.xiaomi.settings.utils.dlog
 import com.android.settingslib.widget.MainSwitchBar
 
-class ThermalSettingsFragment : PreferenceFragment() {
+class ThermalSettingsFragment : PreferenceFragmentCompat() {
 
     private lateinit var appsAdapter: AppsAdapter
     private lateinit var launcherApps: LauncherApps
@@ -64,13 +64,13 @@ class ThermalSettingsFragment : PreferenceFragment() {
         }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        thermalUtils = ThermalUtils.getInstance(getActivity())
+        thermalUtils = ThermalUtils.getInstance(requireContext())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        launcherApps = getActivity().getSystemService(Context.LAUNCHER_APPS_SERVICE) as LauncherApps
-        appsAdapter = AppsAdapter(getActivity())
+        launcherApps = requireContext().getSystemService(Context.LAUNCHER_APPS_SERVICE) as LauncherApps
+        appsAdapter = AppsAdapter(requireActivity())
     }
 
     override fun onCreateView(
@@ -84,7 +84,7 @@ class ThermalSettingsFragment : PreferenceFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         appsRecyclerView = view.findViewById(R.id.thermal_rv_view)
-        appsRecyclerView.layoutManager = LinearLayoutManager(getActivity())
+        appsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         appsRecyclerView.adapter = appsAdapter
         
         loadingView = view.findViewById(R.id.thermal_loading)
@@ -116,7 +116,7 @@ class ThermalSettingsFragment : PreferenceFragment() {
             
             dlog(TAG, "loaded ${appEntries.size} apps")
             
-            getActivity()?.runOnUiThread {
+            requireActivity().runOnUiThread {
                 appsAdapter.entries.clear()
                 appsAdapter.entries.addAll(appEntries)
                 appsAdapter.notifyDataSetChanged()
@@ -229,7 +229,7 @@ class ThermalSettingsFragment : PreferenceFragment() {
         override fun getItemId(p: Int) = 0L
         override fun getView(p: Int, cv: View?, parent: ViewGroup): View {
             val tv = (cv as? TextView ?: inflater.inflate(android.R.layout.simple_spinner_dropdown_item, parent, false) as TextView)
-            tv.text = context.getString(items[p])
+            tv.text = context?.getString(items[p]) ?: ""
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
             return tv
         }
