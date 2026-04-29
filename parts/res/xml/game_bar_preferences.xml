@@ -26,9 +26,21 @@
             android:defaultValue="false" />
 
         <SwitchPreferenceCompat
+            android:key="game_bar_cpu_usage_enable"
+            android:title="CPU Usage"
+            android:summary="Show current CPU usage percentage"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="game_bar_cpu_clock_enable"
+            android:title="CPU Clock Speeds"
+            android:summary="Show current CPU clock speeds for each core"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
             android:key="game_bar_cpu_temp_enable"
             android:title="CPU Temperature"
-            android:summary="Show CPU temperature (thermal_zone0)"
+            android:summary="Show CPU temperature"
             android:defaultValue="false" />
 
         <SwitchPreferenceCompat
@@ -41,18 +53,6 @@
             android:key="game_bar_gpu_usage_enable"
             android:title="GPU Usage"
             android:summary="Show GPU usage percentage"
-            android:defaultValue="false" />
-
-        <SwitchPreferenceCompat
-            android:key="game_bar_gpu_clock_enable"
-            android:title="GPU Clock Speed"
-            android:summary="Show current GPU clock frequency"
-            android:defaultValue="false" />
-
-        <SwitchPreferenceCompat
-            android:key="game_bar_gpu_temp_enable"
-            android:title="GPU Temperature"
-            android:summary="Show current GPU temperature"
             android:defaultValue="false" />
     </PreferenceCategory>
 

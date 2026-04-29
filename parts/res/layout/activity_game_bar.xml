@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/game_bar_fragment"
-        android:name="org.lineageos.settings.gamebar.GameBarFragment"
+        android:name="com.xiaomi.settings.gamebar.GameBarFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

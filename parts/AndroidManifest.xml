@@ -1,50 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 Paranoid Android
+     Copyright (C) 2023-2024 Paranoid Android
 
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.lineageos.settings"
-    android:versionCode="1"
-    android:versionName="1.0"
+    package="com.xiaomi.settings"
     android:sharedUserId="android.uid.system">
+
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
 
-    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-
     <application
-        android:label="@string/device_settings_app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.SubSettingsBase.Expressive"
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
-        android:directBootAware="true"
-        android:theme="@style/Theme.SubSettingsBase">
+        android:directBootAware="true">
 
         <receiver
             android:name=".BootCompletedReceiver"
-            android:exported="false"
+            android:exported="true"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
-            <intent-filter android:priority="1000">
+            <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
+        <!-- Services -->
+        <service android:name=".display.ColorModeService" />
+        <service android:name=".battery.ChargingLimitService" />
+        <service android:name=".thermal.ThermalService" />
+
+        <!-- Battery/Charging Activity -->
         <activity
-            android:name=".thermal.ThermalActivity"
+            android:name=".battery.ChargingControlActivity"
+            android:label="@string/charging_control_title"
+            android:theme="@style/Theme.SubSettingsBase.Expressive"
+            android:exported="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+        </activity>
+
+        <!-- Thermal Activity -->
+        <activity
+            android:name=".thermal.ThermalSettingsActivity"
             android:label="@string/thermal_title"
+            android:theme="@style/Theme.SubSettingsBase.Thermal"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -56,11 +74,6 @@
                 android:name="com.android.settings.summary"
                 android:resource="@string/thermal_summary" />
         </activity>
-
-        <service
-            android:name=".thermal.ThermalService"
-            android:permission="ThermalService">
-        </service>
 
         <!-- GameBar Overlay -->
         <activity
