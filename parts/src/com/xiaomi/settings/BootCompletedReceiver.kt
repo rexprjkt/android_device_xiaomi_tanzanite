@@ -11,7 +11,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.UserHandle
 import android.util.Log
-import com.xiaomi.settings.battery.ChargingLimitService
 import com.xiaomi.settings.thermal.ThermalUtils
 
 /** Everything begins at boot. */
@@ -36,8 +35,5 @@ class BootCompletedReceiver : BroadcastReceiver() {
     private fun onLockedBootCompleted(context: Context) {
         // Thermal
         ThermalUtils.getInstance(context).startService()
-
-        // Battery
-        context.startServiceAsUser(Intent(context, ChargingLimitService::class.java), UserHandle.CURRENT)
     }
 }
