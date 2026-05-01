@@ -40,7 +40,6 @@ class GameBarFragment : SettingsBasePreferenceFragment() {
     private var mCpuClockSwitch: SwitchPreferenceCompat? = null
     private var mCpuTempSwitch: SwitchPreferenceCompat? = null
     private var mRamSwitch: SwitchPreferenceCompat? = null
-    private var mGpuTempSwitch: SwitchPreferenceCompat? = null
     private var mCaptureStartPref: Preference? = null
     private var mCaptureStopPref: Preference? = null
     private var mCaptureExportPref: Preference? = null
@@ -75,7 +74,6 @@ class GameBarFragment : SettingsBasePreferenceFragment() {
         mCpuClockSwitch = findPreference("game_bar_cpu_clock_enable")
         mCpuTempSwitch = findPreference("game_bar_cpu_temp_enable")
         mRamSwitch = findPreference("game_bar_ram_enable")
-        mGpuTempSwitch = findPreference("game_bar_gpu_temp_enable")
 
         mCaptureStartPref = findPreference("game_bar_capture_start")
         mCaptureStopPref = findPreference("game_bar_capture_stop")
@@ -167,10 +165,6 @@ class GameBarFragment : SettingsBasePreferenceFragment() {
         }
         mRamSwitch?.setOnPreferenceChangeListener { _, newValue ->
             mGameBar.setShowRam((newValue as Boolean))
-            true
-        }
-        mGpuTempSwitch?.setOnPreferenceChangeListener { _, newValue ->
-            mGameBar.setShowGpuTemp((newValue as Boolean))
             true
         }
         mCaptureStartPref?.setOnPreferenceClickListener {

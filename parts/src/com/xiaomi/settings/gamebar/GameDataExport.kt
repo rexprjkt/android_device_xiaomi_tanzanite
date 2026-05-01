@@ -49,8 +49,7 @@ class GameDataExport private constructor() {
         fps: String,
         batteryTemp: String,
         cpuUsage: String,
-        cpuTemp: String,
-        gpuTemp: String
+        cpuTemp: String
     ) {
         if (!isCapturing) return
 
@@ -60,8 +59,7 @@ class GameDataExport private constructor() {
             fps,
             batteryTemp,
             cpuUsage,
-            cpuTemp,
-            gpuTemp
+            cpuTemp
         )
         mStatsRows.add(row)
     }
@@ -110,8 +108,7 @@ class GameDataExport private constructor() {
             "FPS",
             "Battery_Temp",
             "CPU_Usage",
-            "CPU_Temp",
-            "GPU_Temp"
+            "CPU_Temp"
         )
 
         @Volatile

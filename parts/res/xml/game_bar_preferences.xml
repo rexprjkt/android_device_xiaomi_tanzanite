@@ -48,12 +48,6 @@
             android:title="RAM Usage"
             android:summary="Show current RAM usage in MB"
             android:defaultValue="false" />
-
-        <SwitchPreferenceCompat
-            android:key="game_bar_gpu_usage_enable"
-            android:title="GPU Usage"
-            android:summary="Show GPU usage percentage"
-            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory

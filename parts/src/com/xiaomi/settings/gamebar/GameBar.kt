@@ -82,8 +82,6 @@ class GameBar private constructor(context: Context) {
         private set
     var isShowFps: Boolean = false
         private set
-    var isShowGpuTemp: Boolean = false
-        private set
 
     private var mLongPressEnabled = false
     private var mLongPressThresholdMs: Long = 1000
@@ -174,8 +172,6 @@ class GameBar private constructor(context: Context) {
         isShowCpuClock = prefs.getBoolean("game_bar_cpu_clock_enable", false)
         isShowCpuTemp = prefs.getBoolean("game_bar_cpu_temp_enable", false)
         isShowRam = prefs.getBoolean("game_bar_ram_enable", false)
-
-        isShowGpuTemp = prefs.getBoolean("game_bar_gpu_temp_enable", false)
 
         mDoubleTapCaptureEnabled = prefs.getBoolean("game_bar_doubletap_capture", false)
         mSingleTapToggleEnabled = prefs.getBoolean("game_bar_single_tap_toggle", false)
@@ -390,13 +386,6 @@ class GameBar private constructor(context: Context) {
             statViews.add(createStatLine("RAM", if ("N/A" == ramStr) "N/A" else "$ramStr MB"))
         }
 
-        // 9) GPU temp
-        var gpuTempStr = "N/A"
-        if (isShowGpuTemp) {
-            gpuTempStr = GameBarGpuInfo.gpuTemp
-            statViews.add(createStatLine("GPU Temp", if ("N/A" == gpuTempStr) "N/A" else "$gpuTempStr°C"))
-        }
-
         if ("side_by_side" == mSplitMode) {
             mRootLayout!!.orientation = LinearLayout.HORIZONTAL
             if ("minimal" == mOverlayFormat) {
@@ -428,8 +417,7 @@ class GameBar private constructor(context: Context) {
                 fpsStr,
                 batteryTempStr,
                 cpuUsageStr,
-                cpuTempStr,
-                gpuTempStr
+                cpuTempStr
             )
         }
 
@@ -576,10 +564,6 @@ class GameBar private constructor(context: Context) {
 
     fun setShowFps(show: Boolean) {
         isShowFps = show
-    }
-
-    fun setShowGpuTemp(show: Boolean) {
-        isShowGpuTemp = show
     }
 
     fun updateTextSize(sp: Int) {
