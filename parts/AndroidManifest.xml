@@ -38,29 +38,6 @@
             </intent-filter>
         </receiver>
 
-        <!-- Services -->
-        <service android:name=".thermal.ThermalService" />
-
-        <!-- Thermal Activity -->
-        <activity
-            android:name=".thermal.ThermalSettingsActivity"
-            android:label="@string/thermal_title"
-            android:icon="@drawable/ic_thermal_settings"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.system" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/thermal_summary" />
-            <meta-data
-                android:name="com.android.settings.icon"
-                android:resource="@drawable/ic_thermal_settings" />
-        </activity>
-
         <!-- GameBar Overlay -->
         <activity
             android:name=".gamebar.GameBarSettingsActivity"

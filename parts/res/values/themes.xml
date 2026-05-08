@@ -23,12 +23,4 @@
     </style>
 
     <style name="Theme.SubSettingsBase_v31" parent="Theme.SubSettingsBase.Expressive" />
-
-    <style name="PreferenceTheme.SettingsLib.Thermal">
-        <item name="android:layout">@layout/thermal_layout</item>
-    </style>
-
-    <style name="Theme.SubSettingsBase.Thermal" parent="Theme.SubSettingsBase.Expressive">
-        <item name="preferenceTheme">@style/PreferenceTheme.SettingsLib.Thermal</item>
-    </style>
 </resources>
