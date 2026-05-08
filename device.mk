@@ -59,7 +59,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_BUILD_SUPER_PARTITION := true
 
 # Compressed Virtual A/B
 ifneq ($(WITH_GMS),true)
