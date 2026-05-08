@@ -1807,6 +1807,13 @@ vendor/mitee/ta/e97c270e-a5c4-4c58-bcd3384a2fa2539e.ta
 
 # Thermal
 vendor/bin/mi_thermald
+vendor/etc/thermal-camera.conf
+vendor/etc/thermal-chg-only.conf
+vendor/etc/thermal-map.conf
+vendor/etc/thermal-mgame.conf
+vendor/etc/thermal-tgame.conf
+vendor/etc/thermal-video.conf
+vendor/etc/thermal-videochat.conf
 vendor/etc/thermal/disable_skin_control.conf
 vendor/etc/thermal/disable_thermal.conf
 vendor/etc/thermal/disable_thermal_temp.conf
