@@ -38,6 +38,23 @@
             </intent-filter>
         </receiver>
 
+        <!-- Services -->
+        <service android:name=".battery.ChargingLimitService" />
+
+        <!-- Battery/Charging Activity -->
+        <activity
+            android:name=".battery.ChargingControlActivity"
+            android:label="@string/charging_control_title"
+            android:exported="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+        </activity>
+
         <!-- GameBar Overlay -->
         <activity
             android:name=".gamebar.GameBarSettingsActivity"
