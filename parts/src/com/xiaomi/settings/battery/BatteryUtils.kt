@@ -20,7 +20,7 @@ object BatteryUtils {
     private const val TAG = "XiaomiBatteryUtils"
     const val PREF_CHARGING_CTRL = "charging_control"
     const val PREF_CHARGING_LIMIT = "charging_limit"
-    private const val NODE_SUSPEND = "/sys/devices/platform/hq_chg_manager/power_supply/battery/input_suspend"
+    private const val NODE_SUSPEND = "/sys/class/power_supply/battery/input_suspend"
 
     private val ioScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
