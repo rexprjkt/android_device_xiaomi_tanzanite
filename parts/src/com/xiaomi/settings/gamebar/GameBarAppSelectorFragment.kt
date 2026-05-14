@@ -19,65 +19,51 @@ package com.xiaomi.settings.gamebar
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.preference.Preference
 import androidx.preference.PreferenceManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.xiaomi.settings.R
+import androidx.preference.PreferenceScreen
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
+import java.util.HashSet
 
-class GameBarAppSelectorFragment : Fragment() {
+class GameBarAppSelectorFragment : SettingsBasePreferenceFragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private var adapter: GameBarAppsAdapter? = null
-    private lateinit var packageManager: PackageManager
-    private var allApps: MutableList<ApplicationInfo>? = null
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.game_bar_app_selector, container, false)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        val screen = preferenceManager.createPreferenceScreen(requireContext())
+        preferenceScreen = screen
+        loadApps(screen)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recyclerView = view.findViewById(R.id.app_list)
-        packageManager = requireContext().packageManager
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        loadApps()
-    }
-
-    private fun loadApps() {
-        allApps = ArrayList()
+    private fun loadApps(screen: PreferenceScreen) {
+        val packageManager = requireContext().packageManager
         val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
         val autoApps = savedAutoApps
+
         for (appInfo in installedApps) {
             if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
                 appInfo.packageName != requireContext().packageName &&
                 !autoApps.contains(appInfo.packageName)
             ) {
-                allApps!!.add(appInfo)
+                val pref = Preference(requireContext()).apply {
+                    title = appInfo.loadLabel(packageManager)
+                    summary = appInfo.packageName
+                    icon = appInfo.loadIcon(packageManager)
+                    isPersistent = false
+                    setOnPreferenceClickListener {
+                        addAppToAutoList(appInfo.packageName)
+                        Toast.makeText(context, "$title added.", Toast.LENGTH_SHORT).show()
+                        screen.removePreference(this)
+                        true
+                    }
+                }
+                screen.addPreference(pref)
             }
         }
-        val listener = object : GameBarAppsAdapter.OnAppClickListener {
-            override fun onAppClick(appInfo: ApplicationInfo) {
-                addAppToAutoList(appInfo.packageName)
-                Toast.makeText(context, appInfo.loadLabel(packageManager).toString() + " added.", Toast.LENGTH_SHORT).show()
-                allApps!!.remove(appInfo)
-                adapter!!.notifyDataSetChanged()
-            }
-        }
-        adapter = GameBarAppsAdapter(packageManager, allApps!!, listener)
-        recyclerView.adapter = adapter
     }
 
     private val savedAutoApps: Set<String>
         get() = PreferenceManager.getDefaultSharedPreferences(requireContext())
-            .getStringSet(PREF_AUTO_APPS, HashSet())!!
+            .getStringSet(PREF_AUTO_APPS, HashSet()) ?: HashSet()
 
     private fun addAppToAutoList(packageName: String) {
         val autoApps = HashSet(savedAutoApps)

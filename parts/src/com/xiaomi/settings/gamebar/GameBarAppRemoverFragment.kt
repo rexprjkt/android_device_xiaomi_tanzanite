@@ -16,67 +16,52 @@
 
 package com.xiaomi.settings.gamebar
 
-import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.preference.Preference
 import androidx.preference.PreferenceManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.xiaomi.settings.R
+import androidx.preference.PreferenceScreen
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
 import java.util.HashSet
 
-class GameBarAppRemoverFragment : Fragment() {
+class GameBarAppRemoverFragment : SettingsBasePreferenceFragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private var adapter: GameBarAutoAppsAdapter? = null
-    private lateinit var packageManager: PackageManager
-    private var autoAppsList: MutableList<ApplicationInfo>? = null
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.game_bar_app_selector, container, false)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        val screen = preferenceManager.createPreferenceScreen(requireContext())
+        preferenceScreen = screen
+        loadAutoApps(screen)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recyclerView = view.findViewById(R.id.app_list)
-        packageManager = requireContext().packageManager
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        loadAutoApps()
-    }
-
-    private fun loadAutoApps() {
+    private fun loadAutoApps(screen: PreferenceScreen) {
+        val packageManager = requireContext().packageManager
         val autoAppsSet = savedAutoApps
-        autoAppsList = ArrayList()
+
         for (pkg in autoAppsSet) {
             try {
-                val info = packageManager.getApplicationInfo(pkg, 0)
-                autoAppsList!!.add(info)
+                val appInfo = packageManager.getApplicationInfo(pkg, 0)
+                val pref = Preference(requireContext()).apply {
+                    title = appInfo.loadLabel(packageManager)
+                    summary = appInfo.packageName
+                    icon = appInfo.loadIcon(packageManager)
+                    isPersistent = false
+                    setOnPreferenceClickListener {
+                        removeAppFromAutoList(appInfo.packageName)
+                        Toast.makeText(context, "$title removed.", Toast.LENGTH_SHORT).show()
+                        screen.removePreference(this)
+                        true
+                    }
+                }
+                screen.addPreference(pref)
             } catch (e: PackageManager.NameNotFoundException) {
+                removeAppFromAutoList(pkg)
             }
         }
-        val listener = object : GameBarAutoAppsAdapter.OnAppRemoveListener {
-            override fun onAppRemove(appInfo: ApplicationInfo) {
-                removeAppFromAutoList(appInfo.packageName)
-                Toast.makeText(context, appInfo.loadLabel(packageManager).toString() + " removed.", Toast.LENGTH_SHORT).show()
-                autoAppsList!!.remove(appInfo)
-                adapter!!.notifyDataSetChanged()
-            }
-        }
-        adapter = GameBarAutoAppsAdapter(packageManager, autoAppsList!!, listener)
-        recyclerView.adapter = adapter
     }
 
     private val savedAutoApps: Set<String>
         get() = PreferenceManager.getDefaultSharedPreferences(requireContext())
-            .getStringSet(GameBarAppSelectorFragment.PREF_AUTO_APPS, HashSet())!!
+            .getStringSet(GameBarAppSelectorFragment.PREF_AUTO_APPS, HashSet()) ?: HashSet()
 
     private fun removeAppFromAutoList(packageName: String) {
         val autoApps = HashSet(savedAutoApps)
