@@ -11,21 +11,21 @@ import android.content.Intent
 import android.os.BatteryManager
 import android.os.Bundle
 import androidx.preference.Preference
-import androidx.preference.SeekBarPreference
 import com.android.settingslib.widget.MainSwitchPreference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
+import com.android.settingslib.widget.SliderPreference
 import com.xiaomi.settings.R
 
 class ChargingControlFragment : SettingsBasePreferenceFragment(),
     Preference.OnPreferenceChangeListener {
 
-    private var mLimitPref: SeekBarPreference? = null
+    private var mLimitPref: SliderPreference? = null
     private var mMasterSwitch: MainSwitchPreference? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.charging_control_settings, rootKey)
 
-        mLimitPref = findPreference<SeekBarPreference>(BatteryUtils.PREF_CHARGING_LIMIT)?.apply {
+        mLimitPref = findPreference<SliderPreference>(BatteryUtils.PREF_CHARGING_LIMIT)?.apply {
             onPreferenceChangeListener = this@ChargingControlFragment
             updateSummary(value)
         }

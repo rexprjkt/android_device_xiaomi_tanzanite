@@ -66,7 +66,7 @@
         android:title="Customization"
         android:dependency="game_bar_enable">
 
-        <SeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="game_bar_text_size"
             android:title="Text Size"
             android:summary="Adjust the size of overlay text"
@@ -74,7 +74,7 @@
             android:max="32"
             android:min="12" />
 
-        <SeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="game_bar_background_alpha"
             android:title="Background Transparency"
             android:summary="Adjust the transparency of the background"
@@ -82,7 +82,7 @@
             android:max="255"
             android:min="0" />
 
-        <SeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="game_bar_corner_radius"
             android:title="Overlay Corner Radius"
             android:summary="Adjust how rounded the overlay corners should be"
@@ -90,7 +90,7 @@
             android:max="100"
             android:min="0" />
 
-        <SeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="game_bar_padding"
             android:title="Overlay Padding"
             android:summary="Adjust the space around the stats"
@@ -98,7 +98,7 @@
             android:max="64"
             android:min="0" />
 
-        <SeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="game_bar_item_spacing"
             android:title="Item Spacing"
             android:summary="Adjust spacing between overlay lines"

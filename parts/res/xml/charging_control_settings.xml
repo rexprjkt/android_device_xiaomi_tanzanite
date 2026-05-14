@@ -11,7 +11,7 @@
         android:title="Settings"
         app:allowDividerAbove="true">
 
-        <SeekBarPreference
+        <com.android.settingslib.widget.SliderPreference
             android:key="charging_limit"
             android:title="@string/charging_limit_title"
             android:defaultValue="80"

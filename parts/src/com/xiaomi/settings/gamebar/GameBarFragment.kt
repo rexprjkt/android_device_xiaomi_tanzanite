@@ -24,9 +24,9 @@ import android.widget.Toast
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
-import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreferenceCompat
 import com.android.settingslib.widget.MainSwitchPreference
+import com.android.settingslib.widget.SliderPreference
 import com.xiaomi.settings.R
 
 class GameBarFragment : SettingsBasePreferenceFragment() {
@@ -47,11 +47,11 @@ class GameBarFragment : SettingsBasePreferenceFragment() {
     private var mSingleTapTogglePref: SwitchPreferenceCompat? = null
     private var mLongPressEnablePref: SwitchPreferenceCompat? = null
     private var mLongPressTimeoutPref: ListPreference? = null
-    private var mTextSizePref: SeekBarPreference? = null
-    private var mBgAlphaPref: SeekBarPreference? = null
-    private var mCornerRadiusPref: SeekBarPreference? = null
-    private var mPaddingPref: SeekBarPreference? = null
-    private var mItemSpacingPref: SeekBarPreference? = null
+    private var mTextSizePref: SliderPreference? = null
+    private var mBgAlphaPref: SliderPreference? = null
+    private var mCornerRadiusPref: SliderPreference? = null
+    private var mPaddingPref: SliderPreference? = null
+    private var mItemSpacingPref: SliderPreference? = null
     private var mUpdateIntervalPref: ListPreference? = null
     private var mTextColorPref: ListPreference? = null
     private var mTitleColorPref: ListPreference? = null
