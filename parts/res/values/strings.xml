@@ -10,6 +10,7 @@
 
     <!-- Charging Control -->
     <string name="charging_control_title">Charging Control</string>
+    <string name="charging_control_summary">Improve battery lifespan by limiting Charge Percentage</string>
     <string name="charging_limit_title">Stop at Percentage</string>
     <string name="charging_limit_summary">Current limit: %1$d%%</string>
 
