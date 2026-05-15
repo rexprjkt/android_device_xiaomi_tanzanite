@@ -38,12 +38,15 @@ class GameBarAppSelectorFragment : SettingsBasePreferenceFragment() {
         val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
         val autoApps = savedAutoApps
 
-        val filteredApps = installedApps.filter { appInfo ->
+        val sortedApps = installedApps.filter { appInfo ->
             appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
             appInfo.packageName != requireContext().packageName
-        }.sortedBy { it.loadLabel(packageManager).toString().lowercase() }
+        }.sortedWith(
+            compareByDescending<ApplicationInfo> { autoApps.contains(it.packageName) }
+            .thenBy { it.loadLabel(packageManager).toString().lowercase() }
+        )
 
-        for (appInfo in filteredApps) {
+        for (appInfo in sortedApps) {
             val pref = SwitchPreferenceCompat(requireContext()).apply {
                 title = appInfo.loadLabel(packageManager)
                 summary = appInfo.packageName
