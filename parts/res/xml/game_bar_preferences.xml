@@ -224,11 +224,6 @@
             android:key="game_bar_app_selector"
             android:title="Select Apps"
             android:summary="Add apps that should auto-enable GameBar" />
-
-        <Preference
-            android:key="game_bar_app_remover"
-            android:title="Remove Selected Apps"
-            android:summary="Remove apps from the auto-enable list" />
     </PreferenceCategory>
 
 </PreferenceScreen>

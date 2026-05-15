@@ -19,10 +19,9 @@ package com.xiaomi.settings.gamebar
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.widget.Toast
-import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 import androidx.preference.PreferenceScreen
+import androidx.preference.SwitchPreferenceCompat
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 import java.util.HashSet
 
@@ -39,25 +38,25 @@ class GameBarAppSelectorFragment : SettingsBasePreferenceFragment() {
         val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
         val autoApps = savedAutoApps
 
-        for (appInfo in installedApps) {
-            if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
-                appInfo.packageName != requireContext().packageName &&
-                !autoApps.contains(appInfo.packageName)
-            ) {
-                val pref = Preference(requireContext()).apply {
-                    title = appInfo.loadLabel(packageManager)
-                    summary = appInfo.packageName
-                    icon = appInfo.loadIcon(packageManager)
-                    isPersistent = false
-                    setOnPreferenceClickListener {
-                        addAppToAutoList(appInfo.packageName)
-                        Toast.makeText(context, "$title added.", Toast.LENGTH_SHORT).show()
-                        screen.removePreference(this)
-                        true
-                    }
+        val filteredApps = installedApps.filter { appInfo ->
+            appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
+            appInfo.packageName != requireContext().packageName
+        }.sortedBy { it.loadLabel(packageManager).toString().lowercase() }
+
+        for (appInfo in filteredApps) {
+            val pref = SwitchPreferenceCompat(requireContext()).apply {
+                title = appInfo.loadLabel(packageManager)
+                summary = appInfo.packageName
+                icon = appInfo.loadIcon(packageManager)
+                isChecked = autoApps.contains(appInfo.packageName)
+                isPersistent = false
+                setOnPreferenceChangeListener { _, newValue ->
+                    val isEnabled = newValue as Boolean
+                    updateAutoApp(appInfo.packageName, isEnabled)
+                    true
                 }
-                screen.addPreference(pref)
             }
+            screen.addPreference(pref)
         }
     }
 
@@ -65,11 +64,17 @@ class GameBarAppSelectorFragment : SettingsBasePreferenceFragment() {
         get() = PreferenceManager.getDefaultSharedPreferences(requireContext())
             .getStringSet(PREF_AUTO_APPS, HashSet()) ?: HashSet()
 
-    private fun addAppToAutoList(packageName: String) {
-        val autoApps = HashSet(savedAutoApps)
-        autoApps.add(packageName)
-        PreferenceManager.getDefaultSharedPreferences(requireContext())
-            .edit().putStringSet(PREF_AUTO_APPS, autoApps).apply()
+    private fun updateAutoApp(packageName: String, add: Boolean) {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val currentSet = prefs.getStringSet(PREF_AUTO_APPS, HashSet()) ?: HashSet()
+
+        val newSet = HashSet(currentSet)
+        if (add) {
+            newSet.add(packageName)
+        } else {
+            newSet.remove(packageName)
+        }
+        prefs.edit().putStringSet(PREF_AUTO_APPS, newSet).apply()
     }
 
     companion object {
