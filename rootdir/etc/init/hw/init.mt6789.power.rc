@@ -148,10 +148,10 @@ on property:sys.boot_completed=1
     write /sys/class/thermal/thermal_message/sconfig 0
 
 on charger
-    chmod 0664 /sys/class/Charging_Adapter/pd_adapter/usbpd_verifed
-    chmod 0664 /sys/class/Charging_Adapter/pd_adapter/request_vdm_cmd
-    chmod 0664 /sys/class/Charging_Adapter/pd_adapter/verify_process
     chmod 0664 /sys/class/Charging_Adapter/pd_adapter/pd_auth
+    chmod 0664 /sys/devices/platform/hq_chg_manager/power_supply/battery/authentic
+    chmod 0664 /sys/devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/request_vdm_cmd
+    chmod 0664 /sys/devices/platform/xm_pd_adapter/Charging_Adapter/pd_adapter/verify_process
     start batterysecret
 
 service vendor.gralloc-4-0 /vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789

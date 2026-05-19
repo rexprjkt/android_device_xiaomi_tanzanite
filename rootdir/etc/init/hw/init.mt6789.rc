@@ -1,4 +1,3 @@
-import /vendor/etc/init/hw/init.batterysecret.rc
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.fingerprint.rc
 import /vendor/etc/init/hw/init.mt6789.power.rc
