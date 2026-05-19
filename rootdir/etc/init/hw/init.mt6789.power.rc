@@ -144,6 +144,9 @@ on property:sys.boot_completed=1
     # Set GPU governor to simple_ondemand
     write /sys/devices/platform/soc/13000000.mali/devfreq/13000000.mali/governor "simple_ondemand"
 
+    # Thermal
+    write /sys/class/thermal/thermal_message/sconfig 0
+
 on charger
     chmod 0664 /sys/class/Charging_Adapter/pd_adapter/usbpd_verifed
     chmod 0664 /sys/class/Charging_Adapter/pd_adapter/request_vdm_cmd
