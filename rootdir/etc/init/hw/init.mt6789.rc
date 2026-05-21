@@ -731,6 +731,7 @@ on property:sys.boot_completed=1 && property:ro.debuggable="1"
    chmod 0755 /sys/kernel/debug
 #O6 code for HQ-392650 by p-jiyongfei at 2024.7.15 end
 
-# Reduce Kernel Printk logging
+# Reduce Kernel Printk logging and Kill Battery first_usage_date
 on early-init
     write /proc/sys/kernel/printk "4 4 1 7"
+    chmod 000 /sys/class/power_supply/battery/first_usage_date
