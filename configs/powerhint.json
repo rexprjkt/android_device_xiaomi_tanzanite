@@ -305,18 +305,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "ThermalSConfig",
-      "Path": "/sys/devices/virtual/thermal/thermal_message/sconfig",
-      "Values": [
-        "0",
-        "10"
-      ],
-      "Comments": [
-        "0: thermal-normal.conf",
-        "10: thermal-nolimits.conf, totally disable limitations"
-      ]
-    },
-    {
       "Name": "PowerHALRenderingState",
       "Path": "vendor.powerhal.rendering",
       "Values": [
@@ -366,12 +354,6 @@
       "Node": "UclampTAMin",
       "Duration": 1000,
       "Value": "40"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "ThermalSConfig",
-      "Duration": 1000,
-      "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
@@ -494,12 +476,6 @@
       "Value": "100"
     },
     {
-      "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "ThermalSConfig",
-      "Duration": 0,
-      "Value": "10"
-    },
-    {
       "PowerHint": "GAME",
       "Type": "EndHint",
       "Value": "INTERACTION"
@@ -521,12 +497,6 @@
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "5"
-    },
-    {
-      "PowerHint": "GAME",
-      "Node": "ThermalSConfig",
-      "Duration": 0,
-      "Value": "10"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
