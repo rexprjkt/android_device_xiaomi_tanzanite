@@ -109,6 +109,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
+# Axion Performance Mode
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := schedutil
+
+GPU_FREQS_PATH := /sys/class/devfreq/13000000.mali/available_frequencies
+GPU_MIN_FREQ_PATH := /sys/class/devfreq/13000000.mali/min_freq
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.mediatek \

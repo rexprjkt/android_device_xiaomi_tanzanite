@@ -9,13 +9,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Halcyon stuff.
-$(call inherit-product, vendor/halcyon/config/common.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+AXION_CAMERA_REAR_INFO := 108,2
+AXION_CAMERA_FRONT_INFO := 20
+AXION_MAINTAINER := ido@rexprjkt°
+AXION_PROCESSOR := Helio_G99_Ultra
+TARGET_INCLUDE_AXFX := true
+TARGET_ENABLE_BLUR := true
+PERF_ANIM_OVERRIDE := true
 
 # Inherit from tanzanite device
 $(call inherit-product, device/xiaomi/tanzanite/device.mk)
 
 PRODUCT_DEVICE := tanzanite
-PRODUCT_NAME := halcyon_tanzanite
+PRODUCT_NAME := lineage_tanzanite
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := 24117RN76O
 PRODUCT_MANUFACTURER := xiaomi

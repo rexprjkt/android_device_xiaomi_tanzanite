@@ -5,6 +5,10 @@ genfscon sysfs /devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param   
 genfscon sysfs /devices/platform/extcon_usb1 u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/extcon_usb u:object_r:sysfs_extcon:s0
 
+# Gpu Boost
+genfscon sysfs /sys/class/devfreq/13000000.mali/available_frequencies                   u:object_r:sysfs_gpu:s0
+genfscon sysfs /sys/class/devfreq/13000000.mali/min_freq                   u:object_r:sysfs_gpu:s0
+
 # Health
 genfscon sysfs /devices/platform/hq_chg_manager/power_supply/battery u:object_r:sysfs_power_supply:s0
 genfscon sysfs /devices/platform/hq_chg_manager/power_supply/usb u:object_r:sysfs_power_supply:s0

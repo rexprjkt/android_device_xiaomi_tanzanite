@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/halcyon_tanzanite.mk
+    $(LOCAL_DIR)/lineage_tanzanite.mk
